@@ -14,6 +14,8 @@ At this point, you're all set to perform whatever tasks need doing on the client
 Once you're done, either the controller or the target can go into the RIM menu and choose the "Disconnect Session" option. When the session ends, the target machine will get a toast notification informing them of this.
 ## The RIM Menu
 As mentioned earlier, accessing the RIM menu directs you back to your machine. There are a number of options in this menu. They include:
+* Update RIM on Target: Forces an update of RIM on the target computer
+    * This option shows if the target's machine is running an older version of RIM
 * Minimize Session: brings control back to your machine as described above
 * Flip Session: Allows your client to remote control your machine and hear its audio. As the original controller, you can flip the session back by selecting this option a second time.
     * You can also use the keyboard shortcut Windows+Shift+F to flip the session back and forth.
@@ -24,7 +26,11 @@ As mentioned earlier, accessing the RIM menu directs you back to your machine. T
 * Send Control+Alt+Delete: Sends this keystroke to the remote machine.
 * Request Unattended Access: Allows you to send a request for unattended access to the client computer. This is useful if you are a sysadmin and need to perform routine maintenance, or even for something as simple as controlling your home machine while on the go.
 * Lock the Target Machine: Performs the equivalent of Windows+L.
-* View Connection Details: Provides a detailed lowdown on your connection
+* View Connection Details: Provides a detailed lowdown on your connection, as well as the target machine. Information includes:
+    * Connection statistics
+    * Information about the computer, including Windows version, available ram, etc.
+    * Running processes
+    * Installed packages
 * Disconnect Session: Terminates the session.
     * Remember that this option is available to both sides of the session.
     * This is also possible via the keyboard command Windows+Shift+D.

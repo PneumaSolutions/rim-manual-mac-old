@@ -38,7 +38,7 @@ The user can choose to either answer yes or no to the installation. Answering no
 ### Silent Install (Enterprise Installers Only)
 A silent install can be initiated by running the executable installer with the */S* command line parameter. This is useful when installing RIM as part of a mass deployment routine.
 ## Session History
-You can view your entire history of past sessions through the RIM dashboard. The session history currently contains the date and time of each session, the name of the computer you connected to, and the duration of the session.
+You can view your entire history of past sessions through the RIM dashboard. The session history currently contains the date and time of each session, the name of the computer you connected to, and the duration of the session. You may also choose to add comments to a session via the "Add Comment" link within the session row. This is useful for adding notes on the current status of an incident for your own sake as well as for the sake of organization administrators.
 ## Managing your Subscription (Personal )and Pro Plans)
 The dashboard allows you to easily view and manage your RIM subscription details. Upon clicking the "manage subscription" link, you can:
 * Upgrade your plan
