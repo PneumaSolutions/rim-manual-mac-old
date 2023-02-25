@@ -5,27 +5,28 @@ A few things will happen immediately after the connection is established.
 * You will be informed about the status of the running screen reader, or lack thereof, on the client's machine.
 * If the client is running a screen reader, a toast notification informing the user that the remote session has begun will provide instant confirmation that the user's system audio is working.
 * Last but not least, all keyboard and mouse input will immediately be directed to the target computer. To direct control back to your machine, do either of the following:
-    * press Windows+Shift+Backspace.
+    * press Option+Shift+Backspace.
     * right click the RIM window's title bar.
     * left click the RIM icon.
 <!-- end -->
 ## Remote Control Zone
-At this point, you're all set to perform whatever tasks need doing on the client side. Should you need to switch back to controlling your own machine, bring up the RIM menu, then select the "Minimize session" option. You will be taken back to your machine until you switch back into the session window or press Windows+Shift+Backspace again. When you go back into the session window, keyboard control will once again be directed to the client computer.  
+At this point, you're all set to perform whatever tasks need doing on the client side. Should you need to switch back to controlling your own machine, bring up the RIM menu, then select the "Minimize session" option. You will be taken back to your machine until you switch back into the session window or press Option+Shift+Backspace again. When you go back into the session window, keyboard control will once again be directed to the client computer.  
 Once you're done, either the controller or the target can go into the RIM menu and choose the "Disconnect Session" option. When the session ends, the target machine will get a toast notification informing them of this.
 ## The RIM Menu
 As mentioned earlier, accessing the RIM menu directs you back to your machine. There are a number of options in this menu. They include:
 * Update RIM on Target: Forces an update of RIM on the target computer
     * This option shows if the target's machine is running an older version of RIM
 * Minimize Session: brings control back to your machine as described above
+    * You can also use the shortcut Option+Shift+M to minimize the session.
 * Flip Session: Allows your client to remote control your machine and hear its audio. As the original controller, you can flip the session back by selecting this option a second time.
-    * You can also use the keyboard shortcut Windows+Shift+F to flip the session back and forth.
+    * You can also use the keyboard shortcut Option+Shift+F to flip the session back and forth.
 * Start/stop Voice Conversation: Allows you to toggle the voice chat on or off for your session.
     * Note that this option is unavailable in unattended sessions as they do not support voice chat. However, prompted sessions still support this.
 * Start Remote Accessibility: This option appears when no screen reader is running on the remote computer. This will enable speech on your end, but the client will not need to worry about hearing speech.
 * Reboot and Reconnect: Allows you to reboot the computer and automatically reconnect the session.
 * Send Control+Alt+Delete: Sends this keystroke to the remote machine.
 * Request Unattended Access: Allows you to send a request for unattended access to the client computer. This is useful if you are a sysadmin and need to perform routine maintenance, or even for something as simple as controlling your home machine while on the go.
-* Lock the Target Machine: Performs the equivalent of Windows+L.
+* Lock the Target Machine: Performs the equivalent of Windows+L or pressing the lock/power button on Mac OS.
 * View Connection Details: Provides a detailed lowdown on your connection, as well as the target machine. Information includes:
     * Connection statistics
     * Information about the computer, including Windows version, available ram, etc.
@@ -33,16 +34,16 @@ As mentioned earlier, accessing the RIM menu directs you back to your machine. T
     * Installed packages
 * Disconnect Session: Terminates the session.
     * Remember that this option is available to both sides of the session.
-    * This is also possible via the keyboard command Windows+Shift+D.
+    * This is also possible via the keyboard command Option+Shift+D.
 <!-- end -->
 
 ## File Transfers
 File transfers are quick and easy, as the standard copy/paste process works across the session.
 1. Bring up the RIM menu, and click on "Minimize Session." Control will be directed back to your computer.
-1. Select the file(s) and/or folder(s) you want to transfer using your file manager of choice. It doesn't matter if this is Windows Explorer, or a third party solution such as Total Commander.
+1. Select the file(s) and/or folder(s) you want to transfer using Finder.
 1. Copy the selected contents to the clipboard in the usual way.
 1. Switch back to the remote session, and locate the folder on the target machine where you wish to paste the content.
-1. Last but not least, paste as you normally would.
+1. Last but not least, paste as you normally would, remembering to use Control+V if you are controlling Windows.
 <!-- end -->
 That's it, the content will instantly begin transferring to the target computer! Note that the transfer time will depend entirely on the size of the content being sent as well as your network speed.
 ## Remote Accessibility Module
@@ -56,6 +57,7 @@ For first-time initialization of the accessibility module, here is what you will
 1. You will be asked to install an addon that will allow your copy of NVDA to communicate with the remote computer during the session. Accept the installation prompts, and wait for NVDA to restart.
 1. By now, the remote accessibility module will be fully initialized, and you will hear speech output as you control the remote computer.
 <!-- end -->
+From this point forward, if you are running a screen reader on the controling computer, the remote accessibility module will automatically start during remote sessions in which the remote computer does not have a screen reader running. Should you be running a screen reader other than NVDA, RIM will disengage that screen reader and then switch you over to NVDA.
 If you need to stop the remote accessibility module on the remote machine in order to start another screen reader, simply press insert+q as you normally would to quit NVDA.
 ## Rebooting and Reconnecting
 Whether you're installing system updates or working your way out of a system hang, RIM has got you covered during the reboot process. Selecting the "Reboot and Reconnect" option off the RIM menu will allow you to either perform a graceful reboot or an emergency reboot, depending on what state the computer is in. While the computer is rebooting, RIM will inform you that reconnection attempts are being made.  
@@ -78,7 +80,7 @@ Should you wish to register one of your own machines for unattended access, you 
 1. Wait for the two-step login code to arrive, enter it, then you should be logged in.
 1. You will be asked what type of access you would like configured for this machine. Your options are:
     1. Unattended: Allows sessions to be initiated without any intervention whatsoever from the end user.
-    1. Prompted: This configuration presents the user with a prompt informing them that you are conecting to their machine.
+    1. Prompted: This configuration presents the user with a prompt informing them that you are conecting to their machine. They will need to press Option+Shift+Y on Mac OS, or Windows+Shift+Y on Windows, should they wish to accept the connection.
 1. Give the machine a name, then activate the "Add Machine" button.
 1. The machine will be registered to your account, which will allow any controller machines logged into your RIM account to connect to this machine.
 <!-- end -->
@@ -102,11 +104,18 @@ Unattended session shortcuts, like any other shortcuts, can have global hotkeys 
 In addition, you can call up an unattended session via the run box if you copy the shortcut into your user directory. Once you've copied the shortcut, you may start an unattended session by typing your-session-name.url in the run box.
 ### Revoking Unattended Access
 If you no longer want your machine to be controlled unattended, you can revoke the controller's access. You do not need to be in a session in order to do this.
-1. Access the Remote Incident Manager icon in your system tray.
-    1. If using the keyboard, press windows+b, then space, then left or right arrow until you find the icon.
-1. Right click this icon, or press the applications or shift+f10 key.
+1. Access the Remote Incident Manager icon in your menu extras/status menus.
+    1. If using VoiceOver, press VO+M twice, then locate the Remote Incident Manager menu icon.
+1. Click this icon, or press VO+Space.
 1. Select the "Revoke Unattended Access" option.
 1. You will arrive at a list of computers, select the one you want to revoke.
 1. You will be asked if you wish to revoke the machine; answer yes.
 <!-- end -->
 That's it! The controller will receive a message stating that this machine is no longer available for unattended access. Should they need unattended access again, they can reinitiate the procedure to request permission for unattended access as described above.
+# Key Command Reference
+Action | Command
+--- | ---
+Minimize Session | Option+Shift+M
+Flip Session | Option+Shift+F
+Disconnect Session (Controller or Target) | Option+Shift+D
+<!-- end -->

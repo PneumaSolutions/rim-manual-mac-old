@@ -1,4 +1,46 @@
 # Change Log
+## 3.1.24
+* When connecting to a target machine with lower display resolution or a higher dots-per-inch (DPI) scale factor than the controller, RIM now scales the remote target display to fit the controller's screen, making the remote display easier to work with visually.
+
+## 3.1.23
+* Added support for prepaid hours.
+
+## 3.1.22
+* Fixed a bug that sometimes caused RIM on the target machine to get into a loop that prevented unattended connections.
+
+## 3.1.21
+* Added a new keyboard shortcut, Windows+Shift+M, while in a session window, to minimize the window and return the keyboard focus to the local (controller) machine.
+
+## 3.1.20
+* Added logging that will help us diagnose reports of unattended targets being intermittently disconnected from RIM.
+
+## 3.1.19
+* Fixed some corner cases in remote keyboard input handling. In particular, when running JAWS on the target machine, JAWS now correctly recognizes Pause and NumLock key presses from the controller. Please let us know if you find any regressions in keyboard input handling, particularly for non-US keyboard layouts.
+
+## 3.1.18
+* Fixed a problem that prevented RIM from updating itself on target machines that were on the Windows Sign-in screen with no active user session.
+
+## 3.1.17
+* Since the previous update, we've received reports of the Shift modifier being stuck on the target machine when running JAWS. We believe this update resolves that problem. Please let us know if you continue to have trouble with stuck modifiers.
+* Fixed a bug that caused RIM to shut down NVDA on the target machine at the end of a session if NVDA was started on the target machine after enabling remote accessibility.
+
+## 3.1.16
+* When running JAWS on the target machine with Unified Keyboard Processing enabled, JAWS now reliably responds to keystrokes from the controller.
+* Fixed an error that sporadically occurs when starting the remote accessibility add-on after installing or updating the NVDA add-on on the controller machine.
+
+## 3.1.15
+* When you connect to a target machine with no running screen reader, RIM will automatically enable remote accessibility if you are running a screen reader on the controller machine. If you're running a screen reader other than NVDA on the controller machine, RIM will even automatically shut down that screen reader and start NVDA if you have it installed.
+* Fixed issues that prevented the remote accessibility module from using your local NVDA configuration settings such as keyboard layout and typing echo.
+
+## 3.1.14
+* The process of re-establishing a connection when there is a connectivity issue is now more robust.
+* Fixed a problem that sometimes caused RIM's background update process to stop.
+* If the controller is running an older version of RIM than the target, the menu no longer includes an option to update the target.
+* If a screen reader or RIM's remote accessibility module is running on the target machine, you can now stop it through an option on the menu.
+
+## 3.1.13
+* Fixed a bug that caused users to get logged out of RIM after installing some Windows updates.
+
 ## 3.1.12
 * By popular demand, RIM no longer prompts for a comment at the end of each session. You can still post comments on sessions in the RIM Dashboard. We may add a configurable option to prompt for a comment as a feature in the future.
 

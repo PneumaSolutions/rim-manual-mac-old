@@ -17,7 +17,7 @@ You may have as many target groups as is needed for your use case.
 If your organizations assign a support technician to a specific set of machines, you probably want to ensure they only have access to that specific set. This is where the access control setting for target groups comes in.  
 When you click on a target group, you are given options to manage the machines in the group, as well as the group itself. The access control section is where you may grant access to this group on a per-account basis. Simply enter the email address of the account you wish to add, then click the "Give Access" button. Once this is done, you will be presented with a table of accounts that are given access to this group. Below each account is a "Revoke Access" button. This button does not require further confirmation.  
 It should be noted that all organization administrators are automatically granted access to manage any and all groups that are created under the organization.
-## Setting up a Preconfigured RIM Installer
+## Setting up a Preconfigured RIM Installer (Pro or above)
 One of the easiest ways to set up a machine for unattended or prompted connections is by creating a custom installer. This is incredibly useful if you are configuring mass deployments, or even as a simpler way to get RIM up and running on an end user's computer you plan on providing support for on the regular.
 IN order to do this:
 1. In the target management screen, click the "Build Target Installer" button.
@@ -26,7 +26,8 @@ IN order to do this:
 1. You will be asked how long you want this installer to be valid for. It can be valid for anywhere between 7 to 30 days. Note that this timeframe only affects the functionality of the installation package. In other words, the machine's RIM configuration will not be disabled when the installation expires.
 1. You are then given the option to assign a bass name. Any machine provisioned via this installation package will have this base name assigned to it.
 1. If you are an enterprise admin, you will see a checkbox that allows you to build the installer as an MSI package. This option is useful for mass deployment of a custom installer to a machine cluster that will be designated to the given target group.
-1. Click on "Build Installer." You will be presented with the download link that you can either copy to the clipboard and send to your end user, or you may download the installer directly for use in mass deployments.
+1. You will be asked to provide an installer name, and optionally some notes. These are for internal records and will not appear within the created installer.
+1. Click on "Build Installer." You will be presented with the download link that you can either copy to the clipboard and send to your end user. Alternatively, you may download the installer directly for use in mass deployments.
 <!-- end -->
 Now that you have your installer, it can be run in one of two ways. In either case, the machine will be added to your list of machines in both your account as well as the RIM client after the installer is complete.
 ### Normal Execution

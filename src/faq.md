@@ -25,6 +25,8 @@ Currently, we offer relays in the following locations:
 ## General Session Troubleshooting
 ### The target machine to which I am connected doesn't respond properly to keyboard commands that work fine on my keyboard. What's going on?
 This could be due to a conflict in keyboard layouts. On rare occasions, if a keyboard layout is different enough from your own it may confuse RIM. Should that occur, please contact us with a report containing information about the keyboard layout of both machines.
+### After a computer is reimaged and has been reconfigured with the same computer name, is there anything that needs to be done to get RIM up and running again? 
+Simply remove the machine from your account, reinstall RIM, then add the machine back into your account.
 
 ## Pricing and Payments
 ### So, getting help from a person over RIM is totally free, right?
@@ -35,8 +37,13 @@ Certainly! We do accommodate as many use cases as we can.
 * There are, of course, going to be situations where a particular issue requires a little more time. Or maybe you're assisting someone learning a new piece of software and might be connecting on and off over the next few days. That's where our day passes and incident passes come in.
     * Incident passes allow you to connect to a single target as many times as is needed over a 24 hour period.
     * Day passes allow you to connect to multiple targets over a 24 hour period.
-* You can accumulate several of these and use them whenever the time calls for them. In other words, if you have multiple day passes, you do not need to use them consecutively.
+    * Packages of prepaid hours allow you to have a set number of hours available to be used entirely on your own time.
+* You can accumulate several of these passes and hourly packages and use them whenever the time calls for them. If you have multiple day passes, for instance, you do not need to use them consecutively. Similarly, You don't need to use your prepaid hours in one session or 24 hour period.
 <!-- end -->
+### I purchased a package of prepaid hours. What happens to my free daily allotment?
+Good news: Your free 30 minute daily allotment is not going anywhere! When you start a keyword-based session, RIM will start off by using your free 30 minute daily allotment. Your prepaid time will be used after your free 30 minutes is up.
+### How long will my prepaid hours last? Are they tied in with my subscription?
+Prepaid hours are entirely separate from your subscription. That being said, your prepaid hours will remain in your account for one (1) year past the date they were first used.
 ### How do I go about bringing RIM to the attention of my place of work?
 We've assembled a [Self-Advocacy Kit](https://sak.getrim.app) (SAK). A packet of e-mail formatted letters you can send to appropriate individuals on behalf of yourself or an employee. For the record, RIM provides the same functionality as less accessible mainstream solutions. As such, RIM can replace an existing infrastructure, rather than be used alongside one. It is therefore considered a reasonable accessibility accommodation and should be provided to you by your organization. Accessibility isn't a favor, it's a right to inclusivity.
 ### What payment methods do you accept?
@@ -85,7 +92,7 @@ When utilizing the public cloud, an https connection to <https://getrim.app> is 
 <!-- end -->
 ## Remote Accessibility Module
 ### Is there anything the target machine needs to configure for first-time use of the Remote Accessibility Module?
-Not at all! There are no dialogue boxes or anything of the sort. In fact, the self-contained copy of NVDA that the target machine will run does not speak, so the target will not even have to concern themselves with it.
+Not at all! There are no dialogue boxes, permission request screens or anything of the sort.
 ### Does the Remote Accessibility Module work on secure screens such as User Account Control?
 Yes! Since the RIM host runs with elevated privileges, this allows us to leverage the Remote Accessibility Module for secure screens. Gone are the days of getting trapped in a user account control dialogue in the middle of a program installation!
 ### What is the minimum version of NVDA required for the client support addon?
@@ -94,8 +101,6 @@ The current minimum version required is 2021.3.
 Yes, and this includes secure screens since the RIM host process takes care of elevation.
 ### Can I use the Remote Accessibility Module with the Windows Store version of NVDA?
 This is not possible due to the Windows Store version of NVDA not allowing the use of addons. You'll have to either use a portable version of NVDA, or have your IT install the standard version of NVDA on your machine.
-### The target requires assistance with an application that is made accessible via an NVDA addon. Will addons function with the Remote Accessibility Module?
-Unfortunately this isn't something we officially support. In these unique circumstances it may be better to transfer a portable full version of NVDA over to the user's machine with your specific configuration. When you launch the portable copy of NVDA, the Remote Accessibility Module will quit on its own. After your work is done, you can relaunch the Remote Accessibility Module to assist you through deleting your portable version of NVDA off of the target computer.
 ## Unattended Sessions
 ### Are voice conversations supported during unattended sessions?
 No. However, prompted sessions do support voice conversations.
