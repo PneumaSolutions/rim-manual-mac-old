@@ -21,23 +21,28 @@ As mentioned earlier, accessing the RIM menu directs you back to your machine. T
 * Flip Session: Allows your client to remote control your machine and hear its audio. As the original controller, you can flip the session back by selecting this option a second time.
     * You can also use the keyboard shortcut Option+Shift+F to flip the session back and forth.
 * Start/stop Voice Conversation: Allows you to toggle the voice chat on or off for your session.
+    * Any mac that has this activated for the first time will call the permission request for access to the microphone. Once accepted, the voice conversation will begin.
     * Note that this option is unavailable in unattended sessions as they do not support voice chat. However, prompted sessions still support this.
 * Start Remote Accessibility: This option appears when no screen reader is running on the remote computer. This will enable speech on your end, but the client will not need to worry about hearing speech.
+    * Not yet implemented
 * Reboot and Reconnect: Allows you to reboot the computer and automatically reconnect the session.
+    * Not yet implemented for Mac
 * Send Control+Alt+Delete: Sends this keystroke to the remote machine.
 * Request Unattended Access: Allows you to send a request for unattended access to the client computer. This is useful if you are a sysadmin and need to perform routine maintenance, or even for something as simple as controlling your home machine while on the go.
+    * Not yet implemented for Mac
 * Lock the Target Machine: Performs the equivalent of Windows+L or pressing the lock/power button on Mac OS.
+    * Not yet implementedfor Mac
 * View Connection Details: Provides a detailed lowdown on your connection, as well as the target machine. Information includes:
     * Connection statistics
-    * Information about the computer, including Windows version, available ram, etc.
-    * Running processes
-    * Installed packages
+    * (soon to come) Information about the computer, including Mac OS version, available ram, etc.
+    * (soon to come) Running processes
+    * (soon to come) Installed packages
 * Disconnect Session: Terminates the session.
     * Remember that this option is available to both sides of the session.
     * This is also possible via the keyboard command Option+Shift+D.
 <!-- end -->
 
-## File Transfers
+## File Transfers (Not yet implemented)
 File transfers are quick and easy, as the standard copy/paste process works across the session.
 1. Bring up the RIM menu, and click on "Minimize Session." Control will be directed back to your computer.
 1. Select the file(s) and/or folder(s) you want to transfer using Finder.
