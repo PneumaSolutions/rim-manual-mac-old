@@ -4,6 +4,9 @@ A few things will happen immediately after the connection is established.
 * The remote control window for the session will appear.
 * You will be informed about the status of the running screen reader, or lack thereof, on the client's machine.
 * If the client is running a screen reader, a toast notification informing the user that the remote session has begun will provide instant confirmation that the user's system audio is working.
+* A Mac target will pop up the keyboard setup assistant if this is the first time a controller has connected to it.
+    * This is for the Karabiner virtual keyboard, which listens to keyboard commands sent to it by a controller.
+    * As such, you will want to walk the target computer through the setup assistant, because it will be listening for remote keyboard presses in the identication process, not the Mac's own keyboard.
 * Last but not least, all keyboard and mouse input will immediately be directed to the target computer. To direct control back to your machine, do either of the following:
     * press Option+Shift+Backspace.
     * right click the RIM window's title bar.
