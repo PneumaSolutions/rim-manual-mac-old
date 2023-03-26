@@ -1,4 +1,27 @@
 # Change Log
+## 3.1.34
+When a Mac controller connects to a Windows target that's not running a screen reader, you can now run the remote accessibility module on the Windows target and get speech output on the Mac controller. Note that you still need to use NVDA keyboard commands when interacting with the Windows target, not VoiceOver commands, and we're using the NVDA laptop keyboard layout. 
+## 3.1.32
+RIM now supports the Fn key when using a Mac laptop as a controller.  
+Note that for the top row of function keys, RIM always treats them as F1 through F12, and you need to use the Fn key if you want to use these keys as system function keys (for adjusting volume and so on), regardless of how the system preference is set on either end of the connection. We figure that in a remote session, you probably want to use these keys as F keys most of the time anyway. Behavior like using Fn+Left Arrow to press Home works as expected.
+## 3.1.31
+* RIM previously didn't let go of its lock on keyboard input when some dialogs were displayed, such as the dialog requesting permission to access the microphone. This is now fixed.
+* When connecting from Mac to Windows or vice versa, it's no longer possible for the controller to trigger the RIM menu on the target machine. This fix requires the corresponding update to RIM for Windows.
+## 3.1.31
+## 3.1.30
+RIM will now request permission to display notifications, both on first run and for existing users updating from a previous version. As with most other permissions, granting this permission requires flipping a switch in System Settings. We've also added our own sound for these
+notifications.
+## 3.1.29
+* We believe the problem that some users have reported with requesting keyboard input monitoring permission on machines running Karabiner Elements is now fixed.
+* The RIM About dialog now has a button to send logs. Please only use this if requested by Pneuma Solutions.
+## 3.1.28
+When using RIM as a controller, it is now compatible with advanced keyboard customization tools such as Karabiner Elements.
+## 3.1.27
+This is a minor update, with just two changes:
+* Marked RIM as requiring macOS 13.0 (Ventura) or later.
+* Fixed RIM so the virtual keyboard is only connected when RIM is actually running as a target. This means that the Keyboard Setup Assistant won't appear when using RIM as a controller. We're still looking into possible ways to avoid that dialog altogether.
+## 3.1.26
+Initial beta build of RIM for Mac OS.
 ## 3.1.24
 * When connecting to a target machine with lower display resolution or a higher dots-per-inch (DPI) scale factor than the controller, RIM now scales the remote target display to fit the controller's screen, making the remote display easier to work with visually.
 

@@ -6,7 +6,7 @@ A few things will happen immediately after the connection is established.
 * If the client is running a screen reader, a toast notification informing the user that the remote session has begun will provide instant confirmation that the user's system audio is working.
 * A Mac target will pop up the keyboard setup assistant if this is the first time a controller has connected to it.
     * This is for the Karabiner virtual keyboard, which listens to keyboard commands sent to it by a controller.
-    * As such, you will want to walk the target computer through the setup assistant, because it will be listening for remote keyboard presses in the identication process, not the Mac's own keyboard.
+    * As such, you will want to walk the target computer through the setup assistant, because it will be listening for remote keyboard presses in the identification process, not the Mac's own keyboard.
 * Last but not least, all keyboard and mouse input will immediately be directed to the target computer. To direct control back to your machine, do either of the following:
     * press Option+Shift+Backspace.
     * right click the RIM window's title bar.
@@ -24,17 +24,18 @@ As mentioned earlier, accessing the RIM menu directs you back to your machine. T
 * Flip Session: Allows your client to remote control your machine and hear its audio. As the original controller, you can flip the session back by selecting this option a second time.
     * You can also use the keyboard shortcut Option+Shift+F to flip the session back and forth.
 * Start/stop Voice Conversation: Allows you to toggle the voice chat on or off for your session.
-    * Any mac that has this activated for the first time will call the permission request for access to the microphone. Once accepted, the voice conversation will begin.
+    * Any mac that has this activated for the first time will initiate the permission request for access to the microphone. Once accepted, the voice conversation will begin.
     * Note that this option is unavailable in unattended sessions as they do not support voice chat. However, prompted sessions still support this.
 * Start Remote Accessibility: This option appears when no screen reader is running on the remote computer. This will enable speech on your end, but the client will not need to worry about hearing speech.
-    * Not yet implemented
+    * This feature is not yet implemented for Mac targets.
 * Reboot and Reconnect: Allows you to reboot the computer and automatically reconnect the session.
-    * Not yet implemented for Mac
+    * This feature is not yet implemented for Mac targets.
 * Send Control+Alt+Delete: Sends this keystroke to the remote machine.
+    * This option is not yet implemented for Mac targets.
 * Request Unattended Access: Allows you to send a request for unattended access to the client computer. This is useful if you are a sysadmin and need to perform routine maintenance, or even for something as simple as controlling your home machine while on the go.
-    * Not yet implemented for Mac
+    * This feature is not yet implemented for Mac targets.
 * Lock the Target Machine: Performs the equivalent of Windows+L or pressing the lock/power button on Mac OS.
-    * Not yet implementedfor Mac
+    * Not yet implemented for Mac
 * View Connection Details: Provides a detailed lowdown on your connection, as well as the target machine. Information includes:
     * Connection statistics
     * (soon to come) Information about the computer, including Mac OS version, available ram, etc.
@@ -54,23 +55,19 @@ File transfers are quick and easy, as the standard copy/paste process works acro
 1. Last but not least, paste as you normally would, remembering to use Control+V if you are controlling Windows.
 <!-- end -->
 That's it, the content will instantly begin transferring to the target computer! Note that the transfer time will depend entirely on the size of the content being sent as well as your network speed.
-## Remote Accessibility Module
-Whether you're assisting a user who doesn't use a screen reader, or you're diagnosing an issue with a malfunctioning screen reader, RIM is fully prepared to come to your aid. The remote accessibility module consists of two components:
-* An addon for the [NVDA screen reader](https://nvaccess.org) that enables the screen reader to receive output from the remote computer
-* A self-contained accessibility module initiated on the target computer at the request of the controller. The advantage to this approach is that the end user does not hear speech on their computer while you're controlling it. Instead, the Remote Accessibility Module pipes the speech output through to the running copy of NVDA on the controller side. This way, you can accessibly assist an end user without them having to install or even download a screen reader.
+## Remote Accessibility Module (Windows targets only for now)
+Whether you're assisting a user who doesn't use a screen reader, or you're diagnosing an issue with a malfunctioning screen reader, RIM is fully prepared to come to your aid. The remote accessibility module is a self-contained accessibility module initiated on the target computer at the request of the controller. The advantage to this approach is that the end user does not hear speech on their computer while you're controlling it. Instead, the Remote Accessibility Module pipes the speech output through to the speech system on the controller side. This way, you can accessibly assist an end user without them having to install or even download a screen reader.
 ### Setup Procedure
 For first-time initialization of the accessibility module, here is what you will need to do:
 1. Bring up the RIM menu.
 1. Select the "Start Remote Accessibility" option.
-1. You will be asked to install an addon that will allow your copy of NVDA to communicate with the remote computer during the session. Accept the installation prompts, and wait for NVDA to restart.
 1. By now, the remote accessibility module will be fully initialized, and you will hear speech output as you control the remote computer.
 <!-- end -->
-From this point forward, if you are running a screen reader on the controling computer, the remote accessibility module will automatically start during remote sessions in which the remote computer does not have a screen reader running. Should you be running a screen reader other than NVDA, RIM will disengage that screen reader and then switch you over to NVDA.
-If you need to stop the remote accessibility module on the remote machine in order to start another screen reader, simply press insert+q as you normally would to quit NVDA.
-## Rebooting and Reconnecting
+From this point forward, if you are running a screen reader on the controling computer, the remote accessibility module will automatically start during remote sessions in which the remote computer does not have a screen reader running.
+## Rebooting and Reconnecting (not yet implemented)
 Whether you're installing system updates or working your way out of a system hang, RIM has got you covered during the reboot process. Selecting the "Reboot and Reconnect" option off the RIM menu will allow you to either perform a graceful reboot or an emergency reboot, depending on what state the computer is in. While the computer is rebooting, RIM will inform you that reconnection attempts are being made.  
 Note that if the computer is rebooted by a software installation or manually rebooted in the usual way, you will be asked if you wish to reconnect the session.
-## Unattended Access
+## Unattended Access (Not yet implemented on Mac targets)
 RIM allows you, as the controller, to configure machines for unattended access. This allows you to provide remote assistance without the user having to launch RIM, enter a keyword, or even be near the computer. This is useful if you are a sysadmin performing routine maintenance on computers in your workgroup. You may also want to allow this for your home computer should you need to access it from someplace else.  
 There are a few ways to configure machines for unattended access.
 ### During an Interactive Session
@@ -88,7 +85,7 @@ Should you wish to register one of your own machines for unattended access, you 
 1. Wait for the two-step login code to arrive, enter it, then you should be logged in.
 1. You will be asked what type of access you would like configured for this machine. Your options are:
     1. Unattended: Allows sessions to be initiated without any intervention whatsoever from the end user.
-    1. Prompted: This configuration presents the user with a prompt informing them that you are conecting to their machine. They will need to press Option+Shift+Y on Mac OS, or Windows+Shift+Y on Windows, should they wish to accept the connection.
+    1. Prompted: This configuration presents the user with a prompt informing them that you are conecting to their machine. They will need to press *Option+Shift+Y* on Mac OS, or *Windows+Shift+Y* on Windows, should they wish to accept the connection.
 1. Give the machine a name, then activate the "Add Machine" button.
 1. The machine will be registered to your account, which will allow any controller machines logged into your RIM account to connect to this machine.
 <!-- end -->
@@ -114,7 +111,7 @@ In addition, you can call up an unattended session via the run box if you copy t
 If you no longer want your machine to be controlled unattended, you can revoke the controller's access. You do not need to be in a session in order to do this.
 1. Access the Remote Incident Manager icon in your menu extras/status menus.
     1. If using VoiceOver, press VO+M twice, then locate the Remote Incident Manager menu icon.
-1. Click this icon, or press VO+Space.
+1. Click this icon, or press VO+Space.     
 1. Select the "Revoke Unattended Access" option.
 1. You will arrive at a list of computers, select the one you want to revoke.
 1. You will be asked if you wish to revoke the machine; answer yes.
@@ -123,7 +120,10 @@ That's it! The controller will receive a message stating that this machine is no
 # Key Command Reference
 Action | Command
 --- | ---
+Activate RIM Menu | Option+Shift+Backspace
 Minimize Session | Option+Shift+M
 Flip Session | Option+Shift+F
 Disconnect Session (Controller or Target) | Option+Shift+D
+Accept Incoming Connection Request | Option+Shift+Y
+Decline Incoming Connection Request | Option+Shift+N
 <!-- end -->
