@@ -27,7 +27,6 @@ As mentioned earlier, accessing the RIM menu directs you back to your machine. T
     * Any mac that has this activated for the first time will initiate the permission request for access to the microphone. Once accepted, the voice conversation will begin.
     * Note that this option is unavailable in unattended sessions as they do not support voice chat. However, prompted sessions still support this.
 * Start Remote Accessibility: This option appears when no screen reader is running on the remote computer. This will enable speech on your end, but the client will not need to worry about hearing speech.
-    * This feature is not yet implemented for Mac targets.
 * Reboot and Reconnect: Allows you to reboot the computer and automatically reconnect the session.
     * This feature is not yet implemented for Mac targets.
 * Send Control+Alt+Delete: Sends this keystroke to the remote machine.
@@ -55,12 +54,13 @@ File transfers are quick and easy, as the standard copy/paste process works acro
 1. Last but not least, paste as you normally would, remembering to use Control+V if you are controlling Windows.
 <!-- end -->
 That's it, the content will instantly begin transferring to the target computer! Note that the transfer time will depend entirely on the size of the content being sent as well as your network speed.
-## Remote Accessibility Module (Windows targets only for now)
-Whether you're assisting a user who doesn't use a screen reader, or you're diagnosing an issue with a malfunctioning screen reader, RIM is fully prepared to come to your aid. The remote accessibility module is a self-contained accessibility module initiated on the target computer at the request of the controller. The advantage to this approach is that the end user does not hear speech on their computer while you're controlling it. Instead, the Remote Accessibility Module pipes the speech output through to the speech system on the controller side. This way, you can accessibly assist an end user without them having to install or even download a screen reader.
+## Remote Accessibility Module
+Whether you're assisting a user who doesn't use a screen reader, or you're diagnosing an issue with a malfunctioning screen reader, RIM is fully prepared to come to your aid. The remote accessibility module is a special configuration initiated on the target Mac at the request of the Windows or Mac controller. The advantage to this approach is that the end user does not hear speech on their computer while you're controlling it. Instead, the Remote Accessibility Module pipes the speech output through to the speech system on the controller side. This way, you can accessibly assist an end user without them having to enable a screen reader.
 ### Setup Procedure
 For first-time initialization of the accessibility module, here is what you will need to do:
 1. Bring up the RIM menu.
 1. Select the "Start Remote Accessibility" option.
+1. If you're using a Windows controller, you will be taken through the process of setting up the NVDA addon for remote accessibility.
 1. By now, the remote accessibility module will be fully initialized, and you will hear speech output as you control the remote computer.
 <!-- end -->
 From this point forward, if you are running a screen reader on the controling computer, the remote accessibility module will automatically start during remote sessions in which the remote computer does not have a screen reader running.

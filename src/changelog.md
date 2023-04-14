@@ -1,4 +1,32 @@
 # Change Log
+## 3.1.39
+This update adds mouse support for Mac targets.
+RIM now requests permission to use macOS accessibility features. For new
+installations, this replaces the input monitoring permission request, so
+the total number of permission steps doesn't go up. But for updates,
+you'll need to grant this permission before you can use RIM after updating.
+## 3.1.38
+Fixed a crash that was affecting Mac targets at session initialization.
+## 3.1.37
+This update marks a major milestone in the Mac port of RIM. The remote
+accessibility feature of RIM is now available when connecting to Mac
+targets. Using a special configuration of VoiceOver on the target
+machine, the controller, whether using Windows or Mac, will hear speech
+while the target user does not hear any speech or sound effects. There
+is also no visible indication that VoiceOver is running on the target.
+The process of starting remote accessibility, either automatically or
+manually, works just as it does with Windows targets. And of course,
+when the session ends, the special configuration of VoiceOver is shut
+down, and VoiceOver is restored to its previous settings.
+
+Note that both Windows and Mac controllers now need to be running
+version 3.1.37 to get full functionality when connecting to a Mac target.
+## 3.1.36
+The remote accessibility feature is now compatible with NVDA 2023.1.
+## 3.1.35
+* RIM now consistently uses stereo audio, particularly for Mac controllers.
+* When using RIM for Mac as a controller with the remote accessibility feature, RIM now uses the voice and speaking rate as defined in the Spoken Content section of system settings.
+
 ## 3.1.34
 When a Mac controller connects to a Windows target that's not running a screen reader, you can now run the remote accessibility module on the Windows target and get speech output on the Mac controller. Note that you still need to use NVDA keyboard commands when interacting with the Windows target, not VoiceOver commands, and we're using the NVDA laptop keyboard layout. 
 ## 3.1.33
