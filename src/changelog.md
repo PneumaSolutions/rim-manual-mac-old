@@ -1,4 +1,12 @@
 # Change Log
+## 3.1.42
+* RIM for Mac now works as an unattended target. It also performs updates in the background as the Windows version does.
+    * We still have some work to do on access to the lock screen, and we don't believe we'll be able to provide access to the login screen before a user is logged in at all, due to limitations of the platform.
+    * we haven't yet figured out how, or if, we'll be able to implement pre-configured target installers, so you'll need to use one of the other available methods of setting up unattended access.
+* Eliminates one source of latency in audio captured from Mac targets.
+<!-- end -->
+## 3.1.40
+Adds some more logging related to audio on the target. So if you can reproduce laggy audio on the target, please do so with this version, then send logs. 
 ## 3.1.39
 This update adds mouse support for Mac targets.
 RIM now requests permission to use macOS accessibility features. For new

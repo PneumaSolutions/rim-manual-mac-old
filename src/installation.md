@@ -12,9 +12,9 @@ You are all set to run Remote Incident Manager for the first time! You may run i
 Due to Mac OS's precautionary behavior when dealing with applications of this nature for the first time, you will need to grant some permissions to Remote Incident Manager upon first launch.
 ## Karabiner HID driver
 This is the driver that processes input that is received by RIM. This is a kernel extension, thus you must manually approve it. Rim will bring up a system dialogue that will take you to the Privacy and Security section of system settings. You will then want to scroll until you locate the Allow button. Clicking this will prompt you for your password or touch ID, after which you will be informed that you need to reboot in order to fully enable Karabiner Elements. Whether you reboot now or later is up to you, but should you decide not to reboot until all the permissions have been approved, exit out of System Settings and go back into RIM.
-## Receiving Keyboard Input
+## Receiving Input
 RIM needs permission to receive all the input directed to it over a remote connection.  
-Click Continue in the RIM window, at which point a system dialogue will appear. If VoiceOver does not immediately focus it, press *VO+F1* twice quickly. Then, down arrow to System dialogues, press right arrow, and then down to the keyboard permissions request. Pressing enter on that will open the alert box, at which point you will want to follow it to System Settings and check the Remote Incident Manager box in the list of applications.
+Click Continue in the RIM window, at which point a system dialogue requesting accessibility service permissions will appear. If VoiceOver does not immediately focus it, press *VO+F1* twice quickly. Then, down arrow to System dialogues, press right arrow, and then down to the keyboard permissions request. Pressing enter on that will open the alert box, at which point you will want to follow it to System Settings and check the Remote Incident Manager box in the list of applications.
 ## Capturing Screen Output
 The next permission request from RIM will be for capturing the screen output which will be piped across the remote connection. The procedure for this is similar to the previous procedure.
 ## Notifications
