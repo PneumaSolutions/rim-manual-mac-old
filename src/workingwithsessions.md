@@ -21,6 +21,8 @@ As mentioned earlier, accessing the RIM menu directs you back to your machine. T
     * This option shows if the target's machine is running an older version of RIM
 * Minimize Session: brings control back to your machine as described above
     * You can also use the shortcut Option+Shift+M to minimize the session.
+* Transfer File to Target: Appears if a file is on the clipboard.
+    * Although this alternate method of completing a file transfer is always available, it is only necessary for transferring files to Mac targets.
 * Flip Session: Allows your client to remote control your machine and hear its audio. As the original controller, you can flip the session back by selecting this option a second time.
     * You can also use the keyboard shortcut Option+Shift+F to flip the session back and forth.
 * Start/stop Voice Conversation: Allows you to toggle the voice chat on or off for your session.
@@ -44,15 +46,19 @@ As mentioned earlier, accessing the RIM menu directs you back to your machine. T
     * This is also possible via the keyboard command Option+Shift+D.
 <!-- end -->
 
-## File Transfers (Not yet implemented)
-File transfers are quick and easy, as the standard copy/paste process works across the session.
+## File Transfers
+RIM provides a simple avenue for transferring files, irrespective of platform used.
 1. Bring up the RIM menu, and click on "Minimize Session." Control will be directed back to your computer.
-1. Select the file(s) and/or folder(s) you want to transfer using Finder.
-1. Copy the selected contents to the clipboard in the usual way.
-1. Switch back to the remote session, and locate the folder on the target machine where you wish to paste the content.
-1. Last but not least, paste as you normally would, remembering to use Control+V if you are controlling Windows.
+1. Select the file(s) and/or folder(s) you want to transfer using your file manager.
+1. Copy the selected contents to the clipboard in the usual way. You will receive a notification that a file is ready to be transferred. You have two options.
+    1. If the target is a Mac
+        1. Activate the RIM session menu, and click on the "Transfer File to Target" option.
+        1. Upon completion of the transfer, the target Mac will generate a temporary directory containing the transferred contents. These should then be copied and pasted to their intended directories.
+    1. If the target is a Windows machine:
+        1. Switch back to the remote session, and locate the folder on the target machine where you wish to paste the content.
+        1. Last but not least, paste as you normally would, remembering to use Control+V if you are controlling Windows from your Mac.
 <!-- end -->
-That's it, the content will instantly begin transferring to the target computer! Note that the transfer time will depend entirely on the size of the content being sent as well as your network speed.
+Note that the transfer time will depend entirely on the size of the content being sent as well as your network speed.
 ## Remote Accessibility Module
 Whether you're assisting a user who doesn't use a screen reader, or you're diagnosing an issue with a malfunctioning screen reader, RIM is fully prepared to come to your aid. The remote accessibility module is a special configuration initiated on the target Mac at the request of the Windows or Mac controller. The advantage to this approach is that the end user does not hear speech on their computer while you're controlling it. Instead, the Remote Accessibility Module pipes the speech output through to the speech system on the controller side. This way, you can accessibly assist an end user without them having to enable a screen reader.
 ### Setup Procedure
