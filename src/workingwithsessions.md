@@ -30,7 +30,8 @@ As mentioned earlier, accessing the RIM menu directs you back to your machine. T
     * Note that this option is unavailable in unattended sessions as they do not support voice chat. However, prompted sessions still support this.
 * Start Remote Accessibility: This option appears when no screen reader is running on the remote computer. This will enable speech on your end, but the client will not need to worry about hearing speech.
 * Reboot and Reconnect: Allows you to reboot the computer and automatically reconnect the session.
-    * This feature is not yet implemented for Mac targets.
+    * Note that a Mac target cannot start RIM pre-login due to platform limitations, notably FileVault.
+    * As such, RIM will reconnect once the user logs in.
 * Send Control+Alt+Delete: Sends this keystroke to the remote machine.
     * This option is not yet implemented for Mac targets.
 * Request Unattended Access: Allows you to send a request for unattended access to the client computer. This is useful if you are a sysadmin and need to perform routine maintenance, or even for something as simple as controlling your home machine while on the go.
@@ -71,7 +72,7 @@ For first-time initialization of the accessibility module, here is what you will
 From this point forward, if you are running a screen reader on the controling computer, the remote accessibility module will automatically start during remote sessions in which the remote computer does not have a screen reader running.
 ## Rebooting and Reconnecting (not yet implemented)
 Whether you're installing system updates or working your way out of a system hang, RIM has got you covered during the reboot process. Selecting the "Reboot and Reconnect" option off the RIM menu will allow you to either perform a graceful reboot or an emergency reboot, depending on what state the computer is in. While the computer is rebooting, RIM will inform you that reconnection attempts are being made.  
-Note that if the computer is rebooted by a software installation or manually rebooted in the usual way, you will be asked if you wish to reconnect the session.
+Note that if the computer is rebooted by a software installation or manually rebooted in the usual way, you will be asked if you wish to reconnect the session. Of further note is that in either case, Mac targets will only reconnect once hte user logs in. This is due to the fact that RIM cannot start automatically on the login screen due to platform limitations, most notably FileVault disk encryption.
 ## Unattended Access
 RIM allows you, as the controller, to configure machines for unattended access. This allows you to provide remote assistance without the user having to launch RIM, enter a keyword, or even be near the computer. This is useful if you are a sysadmin performing routine maintenance on computers in your workgroup. You may also want to allow this for your home computer should you need to access it from someplace else.  
 There are a few ways to configure machines for unattended access.

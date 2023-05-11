@@ -1,4 +1,8 @@
 # Change Log
+## 3.1.44
+* Implements reboot and reconnect for Mac targets, including both standard and emergency reboots.
+    * As with unattended access, RIM doesn't come up on the macOS login screen due to platform restrictions, particularly FileVault. So the target user will need to log back in before RIM can reconnect.
+* The notification about file transfers, introduced in the previous update, is now shown only once per RIM session.
 ## 3.1.43
 * This update modifies the user interface for file transfers. When one or more files are placed on the clipboard on either side of the connection, the controller now receives a notification saying that the file transfer can be completed through the RIM menu. If the controller chooses this menu option, the file transfer is performed, and when done, a temporary folder containing the transferred file or files is opened on the destination machine. This method of file transfer is necessary when the destination machine is a Mac. When the destination is a Windows machine, the file transfer can be completed using either this new method or the old method of pasting in File Explorer on the destination machine.
 ## 3.1.42
