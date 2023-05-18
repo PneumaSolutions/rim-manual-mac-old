@@ -1,4 +1,10 @@
 # Change Log
+## 3.1.46
+* Added support for the new RIM Personal Community Support subscription package.
+
+## 3.1.45
+RIM is now able to automatically resume capturing screen content and audio output if the target machine switches to the lock screen during a session.
+
 ## 3.1.44
 * Implements reboot and reconnect for Mac targets, including both standard and emergency reboots.
     * As with unattended access, RIM doesn't come up on the macOS login screen due to platform restrictions, particularly FileVault. So the target user will need to log back in before RIM can reconnect.

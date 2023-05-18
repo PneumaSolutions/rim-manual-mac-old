@@ -1,7 +1,7 @@
 # Pricing
 Remote Incident Manager is useful in a wide array of scenarios of varying frequency. Thus, our pricing structure makes every reasonable attempt to meet you where you are. Additionally, remember that RIM is always free for the person receiving help.
 # Free Tier
-Anyone can use RIM to assist another user for up to 60 minutes a day during the beta period. These minutes do not need to be used in one sitting, and a usage meter will keep tabs on how many minutes you have on any given day. Throughout your 60 minutes, you may connect to any number of people, over any number of interactive sessions.
+Anyone can use RIM to assist another user for up to 30 minutes a day. These minutes do not need to be used in one sitting, and a usage meter will keep tabs on how many minutes you have on any given day. Throughout your 30 minutes, you may connect to any number of people, over any number of interactive sessions.
 # Consumer Pricing
 ## Passes
 Passes are useful if you're providing assistance on an as needed basis. When you pay for a pass, that pass will wait patiently for you to activate it whenever you are able. This also means that you can hold several passes in storage and use them whenever they're needed.
@@ -28,6 +28,10 @@ Note that the subscriptions do not concern interactive sessions, I.E. those init
   8 | $44.95 | $449
   9 | $49.95 | $499
   10 | $54.95 | $549
+
+## Personal Community Support Package
+
+The personal community support package is useful if you occasionally provide technical support for tasks that run longer than the free daily allotment. This package gets you three (3) hours a day in addition to the 30 minute daily allotment. These hours do not roll over, and unattended access is not included in the base package. However, this package is available as an addon for personal unattended subscriptions. This package is available for $149 per year. A monthly option is not included.
 
 # RIM Pro
 RIM Pro is suitable for either a single support person or trainer, or a small support team. Each pro plan allows connections to an unlimited number of targets, as well as target group configuration.
