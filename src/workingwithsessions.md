@@ -9,8 +9,7 @@ A few things will happen immediately after the connection is established.
     * As such, you will want to walk the target computer through the setup assistant, because it will be listening for remote keyboard presses in the identification process, not the Mac's own keyboard.
 * Last but not least, all keyboard and mouse input will immediately be directed to the target computer. To direct control back to your machine, do either of the following:
     * press Option+Shift+Backspace.
-    * right click the RIM window's title bar.
-    * left click the RIM icon.
+    * Click on the large RIM icon in the upper left hand corner of the session window.
 <!-- end -->
 ## Remote Control Zone
 At this point, you're all set to perform whatever tasks need doing on the client side. Should you need to switch back to controlling your own machine, bring up the RIM menu, then select the "Minimize session" option. You will be taken back to your machine until you switch back into the session window or press Option+Shift+Backspace again. When you go back into the session window, keyboard control will once again be directed to the client computer.  
@@ -34,7 +33,7 @@ As mentioned earlier, accessing the RIM menu directs you back to your machine. T
     * As such, RIM will reconnect once the user logs in.
 * Send Control+Alt+Delete: Sends this keystroke to the remote machine.
     * This option is not yet implemented for Mac targets.
-* Request Unattended Access: Allows you to send a request for unattended access to the client computer. This is useful if you are a sysadmin and need to perform routine maintenance, or even for something as simple as controlling your home machine while on the go.
+* Request Unattended or Prompted Access: Allows you to send a request for unattended access to the client computer. This is useful if you are a sysadmin and need to perform routine maintenance, or even for something as simple as controlling your home machine while on the go.
 * Lock the Target Machine: Performs the equivalent of Windows+L or pressing the lock/power button on Mac OS.
     * Not yet implemented for Mac
 * View Connection Details: Provides a detailed lowdown on your connection, as well as the target machine. Information includes:
@@ -62,26 +61,22 @@ RIM provides a simple avenue for transferring files, irrespective of platform us
 Note that the transfer time will depend entirely on the size of the content being sent as well as your network speed.
 ## Remote Accessibility Module
 Whether you're assisting a user who doesn't use a screen reader, or you're diagnosing an issue with a malfunctioning screen reader, RIM is fully prepared to come to your aid. The remote accessibility module is a special configuration initiated on the target Mac at the request of the Windows or Mac controller. The advantage to this approach is that the end user does not hear speech on their computer while you're controlling it. Instead, the Remote Accessibility Module pipes the speech output through to the speech system on the controller side. This way, you can accessibly assist an end user without them having to enable a screen reader.
-### Setup Procedure
-For first-time initialization of the accessibility module, here is what you will need to do:
-1. Bring up the RIM menu.
-1. Select the "Start Remote Accessibility" option.
-1. If you're using a Windows controller, you will be taken through the process of setting up the NVDA addon for remote accessibility.
-1. By now, the remote accessibility module will be fully initialized, and you will hear speech output as you control the remote computer.
-<!-- end -->
-From this point forward, if you are running a screen reader on the controling computer, the remote accessibility module will automatically start during remote sessions in which the remote computer does not have a screen reader running.
+If you are running VoiceOver on the controling computer, the remote accessibility module will automatically start during remote sessions in which the remote computer does not have a screen reader running.
 ## Rebooting and Reconnecting (not yet implemented)
 Whether you're installing system updates or working your way out of a system hang, RIM has got you covered during the reboot process. Selecting the "Reboot and Reconnect" option off the RIM menu will allow you to either perform a graceful reboot or an emergency reboot, depending on what state the computer is in. While the computer is rebooting, RIM will inform you that reconnection attempts are being made.  
-Note that if the computer is rebooted by a software installation or manually rebooted in the usual way, you will be asked if you wish to reconnect the session. Of further note is that in either case, Mac targets will only reconnect once hte user logs in. This is due to the fact that RIM cannot start automatically on the login screen due to platform limitations, most notably FileVault disk encryption.
-## Unattended Access
-RIM allows you, as the controller, to configure machines for unattended access. This allows you to provide remote assistance without the user having to launch RIM, enter a keyword, or even be near the computer. This is useful if you are a sysadmin performing routine maintenance on computers in your workgroup. You may also want to allow this for your home computer should you need to access it from someplace else.  
+Note that if the computer is rebooted by a software installation or manually rebooted in the usual way, you will be asked if you wish to reconnect the session. Of further note is that in either case, Mac targets will only reconnect once the user logs in. This is due to the fact that RIM cannot start automatically on the login screen due to platform limitations, most notably FileVault disk encryption.
+## Unattended or Prompted Access
+RIM allows you, as the controller, to configure machines for unattended or prompted access. This allows you to provide remote assistance without the user having to launch RIM, enter a keyword, or even be near the computer. This is useful if you are a sysadmin performing routine maintenance on computers in your workgroup, or for clients you provide support to on the regular. You may also want to allow unattended for your home computer should you need to access it from someplace else.  
 There are a few ways to configure machines for unattended access.
 ### During an Interactive Session
 1. Bring up the RIM menu.
-1. Select "Request Unattended Access."
+1. Select "Request Unattended or Prompted Access."
+1. You will be asked what kind of connection you want to configure. Your options are:
+    1. Unattended: Allows sessions to be initiated without any intervention whatsoever from the end user.
+    1. Prompted: This configuration presents the user with a prompt informing them that you are conecting to their machine. They will need to press *Option+Shift+Y* on Mac OS, or *Windows+Shift+Y* on Windows, should they wish to accept the connection.
 1. You will be asked to give this machine a name. Enter a personal name for the machine, or if applicable, the machine ID as it appears in your workgroup.
 1. Press enter.
-1. On the client machine, a dialogue pops up asking the user if they're fine with their computer being set up for unattended access. If they answer yes, then you will get a prompt informing you that unattended access has been approved.
+1. On the client machine, a dialogue pops up asking the user if they're fine with their computer being set up for the access you requested. If they answer yes, then you will get a prompt informing you that the access has been approved.
 <!-- end -->
 ### Registering a Machine to your RIM account
 Should you wish to register one of your own machines for unattended access, you can do so without having to start an interactive session with the machine. 
@@ -111,7 +106,7 @@ For extra convenience, you can create desktop shortcuts that allow you to automa
 <!-- end -->
 Now, when you activate this shortcut, you will either automatically land in the remote session, or send a prompt to the user's machine that they can accept.
 #### More Ways to use Unattended Session Shortcuts
-Unattended session shortcuts, like any other shortcuts, can have global hotkeys associated with them. This can be extremely useful if you are a maintenance tech managing multiple computers in a workgroup. For example, if your workgroup consists of 6 computers that you perform routine maintenance on, you could configure Alt+Control+1 through 6 as hotkeys for each respective machine. This ought to significantly speed up your workflow.  
+Unattended session shortcuts, like any other shortcuts, can have global hotkeys associated with them. This can be extremely useful if you are a maintenance tech managing multiple computers in a workgroup. For example, if your workgroup consists of 6 computers that you perform routine maintenance on, you could configure a keyboard automation utility to have hotkeys for each respective machine. This ought to significantly speed up your workflow.  
 ### Revoking Unattended Access
 If you no longer want your machine to be controlled unattended, you can revoke the controller's access. You do not need to be in a session in order to do this.
 1. Access the Remote Incident Manager icon in your menu extras/status menus.

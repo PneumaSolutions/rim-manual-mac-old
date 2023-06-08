@@ -1,31 +1,50 @@
 # Change Log
+Versions of RIM will be denoted by headings at level 2. Substantial updates with several features for both platforms will be divided into Mac and Windows subheadings at level 3.
+## 3.1.49
+This version provides a consistent, cross-platform way of opening the RIM controller session menu with the mouse. A controller can either click the large RIM icon at the upper-left corner of the session window, or as was previously possible on Windows, they can right-click anywhere on the title bar.
+## 3.1.48
+### Mac
+* Added support for the FN+Number key workaround for using the function row on MacBooks.
+* RIM for Mac now customizes the menu bar, and in particular, the "About" option on the application menu now opens our own About dialog rather than the generic one.
+## 3.1.47
+### Windows
+When connecting a Mac controller to a Windows target, with both sides using the same non-US keyboard layout, keyboard input from the controller wasn't being translated correctly. Version 3.1.47 for Windows fixes this problem.
 ## 3.1.46
 * Added support for the new RIM Personal Community Support subscription package.
 
 ## 3.1.45
+### Mac
 RIM is now able to automatically resume capturing screen content and audio output if the target machine switches to the lock screen during a session.
 
 ## 3.1.44
+### Mac
 * Implements reboot and reconnect for Mac targets, including both standard and emergency reboots.
     * As with unattended access, RIM doesn't come up on the macOS login screen due to platform restrictions, particularly FileVault. So the target user will need to log back in before RIM can reconnect.
 * The notification about file transfers, introduced in the previous update, is now shown only once per RIM session.
 ## 3.1.43
+### Mac
 * This update modifies the user interface for file transfers. When one or more files are placed on the clipboard on either side of the connection, the controller now receives a notification saying that the file transfer can be completed through the RIM menu. If the controller chooses this menu option, the file transfer is performed, and when done, a temporary folder containing the transferred file or files is opened on the destination machine. This method of file transfer is necessary when the destination machine is a Mac. When the destination is a Windows machine, the file transfer can be completed using either this new method or the old method of pasting in File Explorer on the destination machine.
 ## 3.1.42
+### Mac
 * RIM for Mac now works as an unattended target. It also performs updates in the background as the Windows version does.
     * We still have some work to do on access to the lock screen, and we don't believe we'll be able to provide access to the login screen before a user is logged in at all, due to limitations of the platform.
     * we haven't yet figured out how, or if, we'll be able to implement pre-configured target installers, so you'll need to use one of the other available methods of setting up unattended access.
 * Eliminates one source of latency in audio captured from Mac targets.
 <!-- end -->
+## 3.1.41
+### Windows
+Fixed a problem that sometimes caused RIM to crash in response to activity on the Windows clipboard during a RIM session.
 ## 3.1.40
 Adds some more logging related to audio on the target. So if you can reproduce laggy audio on the target, please do so with this version, then send logs. 
 ## 3.1.39
+### Mac
 This update adds mouse support for Mac targets.
 RIM now requests permission to use macOS accessibility features. For new
 installations, this replaces the input monitoring permission request, so
 the total number of permission steps doesn't go up. But for updates,
 you'll need to grant this permission before you can use RIM after updating.
 ## 3.1.38
+### Mac
 Fixed a crash that was affecting Mac targets at session initialization.
 ## 3.1.37
 This update marks a major milestone in the Mac port of RIM. The remote
@@ -42,30 +61,43 @@ down, and VoiceOver is restored to its previous settings.
 Note that both Windows and Mac controllers now need to be running
 version 3.1.37 to get full functionality when connecting to a Mac target.
 ## 3.1.36
+### Windows
 The remote accessibility feature is now compatible with NVDA 2023.1.
 ## 3.1.35
+### Mac
 * RIM now consistently uses stereo audio, particularly for Mac controllers.
 * When using RIM for Mac as a controller with the remote accessibility feature, RIM now uses the voice and speaking rate as defined in the Spoken Content section of system settings.
 
 ## 3.1.34
+### Mac
 When a Mac controller connects to a Windows target that's not running a screen reader, you can now run the remote accessibility module on the Windows target and get speech output on the Mac controller. Note that you still need to use NVDA keyboard commands when interacting with the Windows target, not VoiceOver commands, and we're using the NVDA laptop keyboard layout. 
 ## 3.1.33
 In response to user feedback, we removed the sound effect when displaying notifications about the status of a remote session.
 ## 3.1.32
+### Mac
 RIM now supports the Fn key when using a Mac laptop as a controller.  
 Note that for the top row of function keys, RIM always treats them as F1 through F12, and you need to use the Fn key if you want to use these keys as system function keys (for adjusting volume and so on), regardless of how the system preference is set on either end of the connection. We figure that in a remote session, you probably want to use these keys as F keys most of the time anyway. Behavior like using Fn+Left Arrow to press Home works as expected.
 ## 3.1.31
+### Mac
 * RIM previously didn't let go of its lock on keyboard input when some dialogs were displayed, such as the dialog requesting permission to access the microphone. This is now fixed.
 * When connecting from Mac to Windows or vice versa, it's no longer possible for the controller to trigger the RIM menu on the target machine. This fix requires the corresponding update to RIM for Windows.
+### Windows
+* Added a way to send RIM's log files to Pneuma Solutions, introduced for Mac OS in version 3.1.29. Please only use this function if requested by a representative of Pneuma Solutions.
+* RIM now plays a sound whenever it displays a notification.
+
 ## 3.1.30
+### Mac
 RIM will now request permission to display notifications, both on first run and for existing users updating from a previous version. As with most other permissions, granting this permission requires flipping a switch in System Settings. We've also added our own sound for these
 notifications.
 ## 3.1.29
+### Mac
 * We believe the problem that some users have reported with requesting keyboard input monitoring permission on machines running Karabiner Elements is now fixed.
 * The RIM About dialog now has a button to send logs. Please only use this if requested by Pneuma Solutions.
 ## 3.1.28
+### Mac
 When using RIM as a controller, it is now compatible with advanced keyboard customization tools such as Karabiner Elements.
 ## 3.1.27
+### Mac
 This is a minor update, with just two changes:
 * Marked RIM as requiring macOS 13.0 (Ventura) or later.
 * Fixed RIM so the virtual keyboard is only connected when RIM is actually running as a target. This means that the Keyboard Setup Assistant won't appear when using RIM as a controller. We're still looking into possible ways to avoid that dialog altogether.

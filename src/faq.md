@@ -1,10 +1,13 @@
 # Frequently Asked Questions
 Here are answers to some common questions concerning RIM. When faced with an issue, please refer to this document whenever possible. If your question is not covered, please [Contact us.](https://pneumasolutions.com/contact/)
 ## Compatibility
-### What Platform(s) are supported?
-The initial release of the client is only going to target Windows, but Mac and other devices are definitely on our roadmap. Windows is by and large the easiest operating system to work with when developing a remote access infrastructure, so while it is entirely possible to support RIM on more platforms, the process of implementing support for said platforms may be more involved.
-### Our company is still using Windows 7. Will RIM work under this configuration?
-Yes, RIM supports Windows 7.
+### What versions(s) are supported?
+RIM supports Mac OS Ventura along with future versions, be they Intel or Apple Silicon. You as a Mac user can provide support to Windows targets, and Windows users can provide support to your Mac.
+### What about Mac OS versions before Ventura?
+Some features of RIM depend on functionality newly introduced in Ventura, making compatibility with previous versions difficult to implement.
+## Installation
+### Why so many permissions requests?
+This is unfortunately beyond our control, as Mac OS requires that we use their avenues for requesting the necessary permissions needed for RIM. We have no control over the UX, so can only go as far as providing as much instruction as we can.
 ## Connection Information
 ### Generally speaking, how responsive is RIM?
 The roundtrip latency during an RIM session is extremely minimal. Because we don't rely on a central service, most of the time your connections are direct from one computer to another - this is what is known as peer-to-peer. If your network configuration doesn't allow for peer-to-peer connections, we fall back to any number of relays located around the world rather than relying on one central server. Thus, even then your latency will still be farely minimal.
@@ -64,7 +67,7 @@ If you have multiple controller seats, you can purchase additional channels for 
 
 ## Security
 ### Are RIM sessions encrypted?
-Yes. All sessions, be they direct peer-to-peer connections or connections using a relay, are encrypted end to end using Datagram Transport Layer Security (DTLS). This is the same technology seen in the HTTPS protocol that modern websites implement for security.
+Yes. All sessions across all platforms, be they direct peer-to-peer connections or connections using a relay, are encrypted end to end using Datagram Transport Layer Security (DTLS). This is the same technology seen in the HTTPS protocol that modern websites implement for security.
 ### Can Pneuma Solutions eavesdrop on sessions relayed by the public cloud?
 No. Session key negotiation and encryption are performed end to end between the controller and the target. In other words, everything is encrypted before it even leaves your device. That way, the cloud service merely relays the data as is, making it impossible for the service to decipher the data.
 ### What measures have been taken to prevent remote code execution (RCE) vulnerabilities?
@@ -75,38 +78,20 @@ Yes. The best configuration in this case would be an on-premises deployment, so 
 No and no.
 ### What connections would need to be allowed on a network in order for RIM to function?
 When utilizing the public cloud, an https connection to <https://getrim.app> is required. In optimal cases this is enough for RIM to establish a peer-to-peer connection between the controller and the target. However, it helps to allow UDP connections through ports 19302 and 3478 (the standard STUN and TURN ports). This ensures that if a relay is being utilized, RIM will not have to fall back to a tcp connection on port 443.
-### What background processes does RIM run, and are they light on system resources?
-* rim-host-service.exe: target process
-    * This is an always-on background process that runs by default as long as RIM is installed.
-    * It is very light on system resources
-    * It runs with maximum privileges for the purpose of elevating RIM when needed, I.E. when user account control or a similar secure screen appears during a session.
-    * It downloads some components of RIM in the background so as to reduce installation time and file size.
-    * It does not phone home for any other purpose
-* Remote Incident Manager.exe: main executable
-    * This process's background tasks depending on how the machine is configured.
-        * Normally, Its purpose is to listen for and initiate automatic updates. It checks for updates every five minutes.
-        * On unattended machines, it listens for and initiates unattended or prompted access connections requested by the controller.
-    * Still fairly light on system resources
-    * Phones home only with an anonymous machine ID. No personally identifiable information is ever transferred.
-    *  Unattended access background processing can be shut down via the icon in the system tray for disabling unattended access. A controller deleting a machine from the unattended access group has the same result. However, the main process will still run in order to check for and download updates.
-<!-- end -->
+### Does RIM run in the background, and if so will it appear in my Command+Tab list?
+RIM runs in the background in order to process automatic updates, receive unattended/prompted connection requests, and enable use of the goobal Option+Shift+Backspace keyboard command. It will not phone home for any other purpose, and no personally identifiable information is transferred.  
+RIM will not appear in your Command+Tab list, but it will appear in the status menus that contain your battery, WiFi connection information, etc.
 ## Remote Accessibility Module
 ### Is there anything the target machine needs to configure for first-time use of the Remote Accessibility Module?
 Not at all! There are no dialogue boxes, permission request screens or anything of the sort.
-### Does the Remote Accessibility Module work on secure screens such as User Account Control?
-Yes! Since the RIM host runs with elevated privileges, this allows us to leverage the Remote Accessibility Module for secure screens. Gone are the days of getting trapped in a user account control dialogue in the middle of a program installation!
-### What is the minimum version of NVDA required for the client support addon?
-The current minimum version required is 2021.3.
-### Will the RIM Client Support addon run on a portable copy of NVDA?
-Yes, and this includes secure screens since the RIM host process takes care of elevation.
-### Can I use the Remote Accessibility Module with the Windows Store version of NVDA?
-This is not possible due to the Windows Store version of NVDA not allowing the use of addons. You'll have to either use a portable version of NVDA, or have your IT install the standard version of NVDA on your machine.
+### Does the Remote Accessibility Module work on secure screens such as the lock screen?
+Yes! Since the RIM host runs with elevated privileges, this allows us to leverage the Remote Accessibility Module for secure screens. The only exception to this is FileVault's logon window.
 ## Unattended Sessions
 ### Are voice conversations supported during unattended sessions?
 No. However, prompted sessions do support voice conversations.
 ### If I delete an unattended machine from my controller account, will it automatically revoke permission on the target?
 Yes. Once an unattended target is removed, the change will be effective immediately. If the target machine is powered down or otherwise not connected to the internet, the change will be effective as soon as an internet connection is established on their machine.
 ### The target machine rebooted after installing updates and drivers, and it requires a password to log in. How does the session continue from here?
-RIM will attempt to automatically reconnect the session if an installation triggers a reboot. You will also be able to Control+Alt+Delete into the login screen if the target machine requires that.
+In most instances, particularly when FileVault disk encryption is enabled, the target user will need to manually enter the password. RIM cannot start on an encrypted Mac before it has been fully logged in.
 ### I have multiple machines playing the part of the controller. Will the list of machines set up for unattended access populate across all machines?
 Yes. The list of machines configured for unattended access is stored within your account, so it will populate automatically.
