@@ -1,5 +1,13 @@
 # Change Log
 Versions of RIM will be denoted by headings at level 2. Substantial updates with several features for both platforms will be divided into Mac and Windows subheadings at level 3.
+## 3.2.1
+* The process of starting a new RIM session on the controller side is now smoother. The original window, where you entered your keyword or chose a target machine, will not go away until the main session window is ready. If the initial window no longer has focus when the session starts, e.g. if you switched tasks while waiting for the target user to enter a keyword, then RIM will notify you that the session is ready, and the main session window will appear when you return focus to RIM.
+* macOS only: As part of the previous change, we modified the way that RIM adds and removes itself in the Dock and the Command+Tab list. Please let us know if you find any problems with the current behavior.
+* Windows targets only: If a screen reader is started on the target machine while remote accessibility is active, then remote accessibility will quietly shut down to avoid double speech output.
+## 3.2.0
+First official release for Mac OS! New features include:
+* ability to configure unattended or prompted sessions from within an interactive session.
+* All new permissions instructions for users who are not using VoiceOver.
 ## 3.1.49
 This version provides a consistent, cross-platform way of opening the RIM controller session menu with the mouse. A controller can either click the large RIM icon at the upper-left corner of the session window, or as was previously possible on Windows, they can right-click anywhere on the title bar.
 ## 3.1.48
