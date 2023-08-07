@@ -1,5 +1,7 @@
 # Change Log
 Versions of RIM will be denoted by headings at level 2. Substantial updates with several features for both platforms will be divided into Mac and Windows subheadings at level 3.
+## 3.2.5
+* Fixed the message that displays remaining free time.
 ## 3.2.4
 * Localization of RIM into other languages is now in beta. The following languages are currently supported: German, Spanish, French, Italian, and Swedish. To use RIM in one of these languages, press the "Language (BETA)" button at the bottom of the "Provide Help" or "Receive Help" window, then choose your language from the drop-down list and press the "Switch Language" button. We look forward to your feedback.
 ## 3.2.1
