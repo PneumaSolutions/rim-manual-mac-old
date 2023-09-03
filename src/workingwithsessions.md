@@ -78,6 +78,7 @@ There are a few ways to configure machines for unattended access.
 1. Press enter.
 1. On the client machine, a dialogue pops up asking the user if they're fine with their computer being set up for the access you requested. If they answer yes, then you will get a prompt informing you that the access has been approved.
 <!-- end -->
+*Note for personal account holders:* If you exceed the number of machine slots available to you in your current plan, RIM will notify you of this and prevent the machine registration from continuing. If you wish to register the machine, either [unregister one of your other machines](https://manual.getrim.app/dashboard.html#managing-targets) or [upgrade your plan.]
 ### Registering a Machine to your RIM account
 Should you wish to register one of your own machines for unattended access, you can do so without having to start an interactive session with the machine. 
 1. Start RIM in Receive Help Mode.
@@ -90,6 +91,7 @@ Should you wish to register one of your own machines for unattended access, you 
 1. Give the machine a name, then activate the "Add Machine" button.
 1. The machine will be registered to your account, which will allow any controller machines logged into your RIM account to connect to this machine.
 <!-- end -->
+*Note for personal account holders:* If you exceed the number of machine slots available to you in your current plan, RIM will notify you of this and prevent the machine registration from continuing. If you wish to register the machine, either [unregister one of your other machines](https://manual.getrim.app/dashboard.html#managing-targets) or [upgrade your plan.]
 ### Getting Connected
 Now that we've registered the machine for unattended access, here is how we will start a session.
 1. Start RIM in controller mode.
