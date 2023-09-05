@@ -1,5 +1,7 @@
 # Change Log
 Versions of RIM will be denoted by headings at level 2. Substantial updates with several features for both platforms will be divided into Mac and Windows subheadings at level 3.
+## 3.2.8
+* macOS: Fixed a bug that prevented RIM from coming up when activating the application through the Finder or Dock, rather than using the global hotkey.
 ## 3.2.7
 * Voice conversations now automatically use stereo when the audio hardware supports it. This is useful when using RIM for training in audio production.
 ## 3.2.6
