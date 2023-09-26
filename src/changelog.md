@@ -1,5 +1,7 @@
 # Change Log
 Versions of RIM will be denoted by headings at level 2. Substantial updates with several features for both platforms will be divided into Mac and Windows subheadings at level 3.
+## 3.2.9
+* macOS: We are unfortunately no longer able to offer automatic stereo microphone input in voice conversations on this platform, because in some cases, this prevented microphone input from working at all on a Mac. Note that this change has no effect on captured audio output from the target machine; that is still stereo.
 ## 3.2.8
 * macOS: Fixed a bug that prevented RIM from coming up when activating the application through the Finder or Dock, rather than using the global hotkey.
 ## 3.2.7
