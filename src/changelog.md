@@ -1,5 +1,7 @@
 # Change Log
 Versions of RIM will be denoted by headings at level 2. Substantial updates with several features for both platforms will be divided into Mac and Windows subheadings at level 3.
+## 3.2.11
+* Added a new button to the Connection Details window to request that the target machine send its RIM logs to Pneuma Solutions. Please only use this feature if requested by Pneuma Solutions.
 ## 3.2.10
 * Fixed a problem that could cause RIM to stop working until the next application restart if the machine's Internet connection is temporarily unavailable.
 ## 3.2.9
