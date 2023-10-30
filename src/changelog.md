@@ -1,5 +1,7 @@
 # Change Log
 Versions of RIM will be denoted by headings at level 2. Substantial updates with several features for both platforms will be divided into Mac and Windows subheadings at level 3.
+## 3.2.13
+* Windows: Fixed a problem with keyboard input when connecting to target machines running JAWS 2024.
 ## 3.2.12
 * Worked around a rare problem that could prevent the RIM app from connecting to the cloud service.
 ## 3.2.11
