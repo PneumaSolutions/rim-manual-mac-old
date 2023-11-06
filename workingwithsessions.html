@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Working within a Session - Remote Incident Manager Manual</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li class="chapter-item expanded "><a href="systemspecs.html"><strong aria-hidden="true">2.</strong> System Requirements</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">3.</strong> Installation</a></li><li class="chapter-item expanded "><a href="gettingconnected.html"><strong aria-hidden="true">4.</strong> Getting Connected</a></li><li class="chapter-item expanded "><a href="workingwithsessions.html" class="active"><strong aria-hidden="true">5.</strong> Working within a Session</a></li><li class="chapter-item expanded "><a href="dashboard.html"><strong aria-hidden="true">6.</strong> The RIM Dashboard</a></li><li class="chapter-item expanded "><a href="faq.html"><strong aria-hidden="true">7.</strong> Frequently Asked Questions</a></li><li class="chapter-item expanded "><a href="pricing.html"><strong aria-hidden="true">8.</strong> pricing</a></li><li class="chapter-item expanded "><a href="changelog.html"><strong aria-hidden="true">9.</strong> Change Log</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Remote Incident Manager Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="working-within-a-session"><a class="header" href="#working-within-a-session">Working within a Session</a></h1>
+<h2 id="things-to-know-before-you-begin"><a class="header" href="#things-to-know-before-you-begin">Things to Know before you Begin</a></h2>
+<p>A few things will happen immediately after the connection is established.</p>
+<ul>
+<li>The remote control window for the session will appear.</li>
+<li>You will be informed about the status of the running screen reader, or lack thereof, on the client's machine.</li>
+<li>If the client is running a screen reader, a toast notification informing the user that the remote session has begun will provide instant confirmation that the user's system audio is working.</li>
+<li>A Mac target will pop up the keyboard setup assistant if this is the first time a controller has connected to it.
+<ul>
+<li>This is for the Karabiner virtual keyboard, which listens to keyboard commands sent to it by a controller.</li>
+<li>As such, you will want to walk the target computer through the setup assistant, because it will be listening for remote keyboard presses in the identification process, not the Mac's own keyboard.</li>
+</ul>
+</li>
+<li>Last but not least, all keyboard and mouse input will immediately be directed to the target computer. To direct control back to your machine, do either of the following:
+<ul>
+<li>press Option+Shift+Backspace.</li>
+<li>Click on the large RIM icon in the upper left hand corner of the session window.</li>
+</ul>
+</li>
+</ul>
+<!-- end -->
+<h2 id="remote-control-zone"><a class="header" href="#remote-control-zone">Remote Control Zone</a></h2>
+<p>At this point, you're all set to perform whatever tasks need doing on the client side. Should you need to switch back to controlling your own machine, bring up the RIM menu, then select the &quot;Minimize session&quot; option. You will be taken back to your machine until you switch back into the session window or press Option+Shift+Backspace again. When you go back into the session window, keyboard control will once again be directed to the client computer.<br />
+Once you're done, either the controller or the target can go into the RIM menu and choose the &quot;Disconnect Session&quot; option. When the session ends, the target machine will get a toast notification informing them of this.</p>
+<h2 id="the-rim-menu"><a class="header" href="#the-rim-menu">The RIM Menu</a></h2>
+<p>As mentioned earlier, accessing the RIM menu directs you back to your machine. There are a number of options in this menu. They include:</p>
+<ul>
+<li>Update RIM on Target: Forces an update of RIM on the target computer
+<ul>
+<li>This option shows if the target's machine is running an older version of RIM</li>
+</ul>
+</li>
+<li>Minimize Session: brings control back to your machine as described above
+<ul>
+<li>You can also use the shortcut Option+Shift+M to minimize the session.</li>
+</ul>
+</li>
+<li>Transfer File to Target: Appears if a file is on the clipboard.
+<ul>
+<li>Although this alternate method of completing a file transfer is always available, it is only necessary for transferring files to Mac targets.</li>
+</ul>
+</li>
+<li>Flip Session: Allows your client to remote control your machine and hear its audio. As the original controller, you can flip the session back by selecting this option a second time.
+<ul>
+<li>You can also use the keyboard shortcut Option+Shift+F to flip the session back and forth.</li>
+</ul>
+</li>
+<li>Start/stop Voice Conversation: Allows you to toggle the voice chat on or off for your session.
+<ul>
+<li>Any mac that has this activated for the first time will initiate the permission request for access to the microphone. Once accepted, the voice conversation will begin.</li>
+<li>Note that this option is unavailable in unattended sessions as they do not support voice chat. However, prompted sessions still support this.</li>
+</ul>
+</li>
+<li>Start Remote Accessibility: This option appears when no screen reader is running on the remote computer. This will enable speech on your end, but the client will not need to worry about hearing speech.</li>
+<li>Reboot and Reconnect: Allows you to reboot the computer and automatically reconnect the session.
+<ul>
+<li>Note that a Mac target cannot start RIM pre-login due to platform limitations, notably FileVault.</li>
+<li>As such, RIM will reconnect once the user logs in.</li>
+</ul>
+</li>
+<li>Send Control+Alt+Delete: Sends this keystroke to the remote machine.
+<ul>
+<li>This option is not yet implemented for Mac targets.</li>
+</ul>
+</li>
+<li>Request Unattended or Prompted Access: Allows you to send a request for unattended access to the client computer. This is useful if you are a sysadmin and need to perform routine maintenance, or even for something as simple as controlling your home machine while on the go.</li>
+<li>Lock the Target Machine: Performs the equivalent of Windows+L or pressing the lock/power button on Mac OS.
+<ul>
+<li>Not yet implemented for Mac</li>
+</ul>
+</li>
+<li>View Connection Details: Provides a detailed lowdown on your connection, as well as the target machine. Information includes:
+<ul>
+<li>Connection statistics</li>
+<li>(soon to come) Information about the computer, including Mac OS version, available ram, etc.</li>
+<li>(soon to come) Running processes</li>
+<li>(soon to come) Installed packages</li>
+</ul>
+</li>
+<li>Disconnect Session: Terminates the session.
+<ul>
+<li>Remember that this option is available to both sides of the session.</li>
+<li>This is also possible via the keyboard command Option+Shift+D.</li>
+</ul>
+</li>
+</ul>
+<!-- end -->
+<h2 id="file-transfers"><a class="header" href="#file-transfers">File Transfers</a></h2>
+<p>RIM provides a simple avenue for transferring files, irrespective of platform used.</p>
+<ol>
+<li>Bring up the RIM menu, and click on &quot;Minimize Session.&quot; Control will be directed back to your computer.</li>
+<li>Select the file(s) and/or folder(s) you want to transfer using your file manager.</li>
+<li>Copy the selected contents to the clipboard in the usual way. You will receive a notification that a file is ready to be transferred. You have two options.
+<ol>
+<li>If the target is a Mac
+<ol>
+<li>Activate the RIM session menu, and click on the &quot;Transfer File to Target&quot; option.</li>
+<li>Upon completion of the transfer, the target Mac will generate a temporary directory containing the transferred contents. These should then be copied and pasted to their intended directories.</li>
+</ol>
+</li>
+<li>If the target is a Windows machine:
+<ol>
+<li>Switch back to the remote session, and locate the folder on the target machine where you wish to paste the content.</li>
+<li>Last but not least, paste as you normally would, remembering to use Control+V if you are controlling Windows from your Mac.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<!-- end -->
+<p>Note that the transfer time will depend entirely on the size of the content being sent as well as your network speed.</p>
+<h2 id="remote-accessibility-module"><a class="header" href="#remote-accessibility-module">Remote Accessibility Module</a></h2>
+<p>Whether you're assisting a user who doesn't use a screen reader, or you're diagnosing an issue with a malfunctioning screen reader, RIM is fully prepared to come to your aid. The remote accessibility module is a special configuration initiated on the target Mac at the request of the Windows or Mac controller. The advantage to this approach is that the end user does not hear speech on their computer while you're controlling it. Instead, the Remote Accessibility Module pipes the speech output through to the speech system on the controller side. This way, you can accessibly assist an end user without them having to enable a screen reader.
+If you are running VoiceOver on the controling computer, the remote accessibility module will automatically start during remote sessions in which the remote computer does not have a screen reader running.</p>
+<h2 id="rebooting-and-reconnecting-not-yet-implemented"><a class="header" href="#rebooting-and-reconnecting-not-yet-implemented">Rebooting and Reconnecting (not yet implemented)</a></h2>
+<p>Whether you're installing system updates or working your way out of a system hang, RIM has got you covered during the reboot process. Selecting the &quot;Reboot and Reconnect&quot; option off the RIM menu will allow you to either perform a graceful reboot or an emergency reboot, depending on what state the computer is in. While the computer is rebooting, RIM will inform you that reconnection attempts are being made.<br />
+Note that if the computer is rebooted by a software installation or manually rebooted in the usual way, you will be asked if you wish to reconnect the session. Of further note is that in either case, Mac targets will only reconnect once the user logs in. This is due to the fact that RIM cannot start automatically on the login screen due to platform limitations, most notably FileVault disk encryption.</p>
+<h2 id="unattended-or-prompted-access"><a class="header" href="#unattended-or-prompted-access">Unattended or Prompted Access</a></h2>
+<p>RIM allows you, as the controller, to configure machines for unattended or prompted access. This allows you to provide remote assistance without the user having to launch RIM, enter a keyword, or even be near the computer. This is useful if you are a sysadmin performing routine maintenance on computers in your workgroup, or for clients you provide support to on the regular. You may also want to allow unattended for your home computer should you need to access it from someplace else.<br />
+There are a few ways to configure machines for unattended access.</p>
+<h3 id="during-an-interactive-session"><a class="header" href="#during-an-interactive-session">During an Interactive Session</a></h3>
+<ol>
+<li>Bring up the RIM menu.</li>
+<li>Select &quot;Request Unattended or Prompted Access.&quot;</li>
+<li>You will be asked what kind of connection you want to configure. Your options are:
+<ol>
+<li>Unattended: Allows sessions to be initiated without any intervention whatsoever from the end user.</li>
+<li>Prompted: This configuration presents the user with a prompt informing them that you are conecting to their machine. They will need to press <em>Option+Shift+Y</em> on Mac OS, or <em>Windows+Shift+Y</em> on Windows, should they wish to accept the connection.</li>
+</ol>
+</li>
+<li>You will be asked to give this machine a name. Enter a personal name for the machine, or if applicable, the machine ID as it appears in your workgroup.</li>
+<li>Press enter.</li>
+<li>On the client machine, a dialogue pops up asking the user if they're fine with their computer being set up for the access you requested. If they answer yes, then you will get a prompt informing you that the access has been approved.</li>
+</ol>
+<!-- end -->
+<p><em>Note for personal account holders:</em> If you exceed the number of machine slots available to you in your current plan, RIM will notify you of this and prevent the machine registration from continuing. If you wish to register the machine, either <a href="https://manual.getrim.app/dashboard.html#managing-targets">unregister one of your other machines</a> or [upgrade your plan.]</p>
+<h3 id="registering-a-machine-to-your-rim-account"><a class="header" href="#registering-a-machine-to-your-rim-account">Registering a Machine to your RIM account</a></h3>
+<p>Should you wish to register one of your own machines for unattended access, you can do so without having to start an interactive session with the machine. </p>
+<ol>
+<li>Start RIM in Receive Help Mode.</li>
+<li>Click on the &quot;Add this machine to your RIM account&quot; button.</li>
+<li>Enter your email, then click next.</li>
+<li>Wait for the two-step login code to arrive, enter it, then you should be logged in.</li>
+<li>You will be asked what type of access you would like configured for this machine. Your options are:
+<ol>
+<li>Unattended: Allows sessions to be initiated without any intervention whatsoever from the end user.</li>
+<li>Prompted: This configuration presents the user with a prompt informing them that you are conecting to their machine. They will need to press <em>Option+Shift+Y</em> on Mac OS, or <em>Windows+Shift+Y</em> on Windows, should they wish to accept the connection.</li>
+</ol>
+</li>
+<li>Give the machine a name, then activate the &quot;Add Machine&quot; button.</li>
+<li>The machine will be registered to your account, which will allow any controller machines logged into your RIM account to connect to this machine.</li>
+</ol>
+<!-- end -->
+<p><em>Note for personal account holders:</em> If you exceed the number of machine slots available to you in your current plan, RIM will notify you of this and prevent the machine registration from continuing. If you wish to register the machine, either <a href="https://manual.getrim.app/dashboard.html#managing-targets">unregister one of your other machines</a> or [upgrade your plan.]</p>
+<h3 id="getting-connected"><a class="header" href="#getting-connected">Getting Connected</a></h3>
+<p>Now that we've registered the machine for unattended access, here is how we will start a session.</p>
+<ol>
+<li>Start RIM in controller mode.</li>
+<li>Rather than entering a keyword, locate and activate the&quot;Choose a machine&quot; button.</li>
+<li>When you click this, a list of machines will appear. Choose the one you want, then hit enter. You may also use the search bar to narrow the list down to a specific machine.</li>
+</ol>
+<!-- end -->
+<p>If the target machine is configured for prompted access, the end user will get a prompt. Once they answer yes, you'll be connected. If the session is unattended, you will immediately be connected and dropped into the remote control zone.<br />
+Please note: Voice conversations are not supported during fully unattended sessions.</p>
+<h3 id="creating-a-shortcut-for-an-unattended-session"><a class="header" href="#creating-a-shortcut-for-an-unattended-session">Creating a Shortcut for an Unattended Session</a></h3>
+<p>For extra convenience, you can create desktop shortcuts that allow you to automatically launch unattended sessions. In order to do this:</p>
+<ol>
+<li>Access the list of unattended computers, and select the one you want to create a shortcut for.</li>
+<li>Click on the &quot;Create Shortcut&quot; button.</li>
+<li>A shortcut will be automatically added to your desktop.</li>
+</ol>
+<!-- end -->
+<p>Now, when you activate this shortcut, you will either automatically land in the remote session, or send a prompt to the user's machine that they can accept.</p>
+<h4 id="more-ways-to-use-unattended-session-shortcuts"><a class="header" href="#more-ways-to-use-unattended-session-shortcuts">More Ways to use Unattended Session Shortcuts</a></h4>
+<p>Unattended session shortcuts, like any other shortcuts, can have global hotkeys associated with them. This can be extremely useful if you are a maintenance tech managing multiple computers in a workgroup. For example, if your workgroup consists of 6 computers that you perform routine maintenance on, you could configure a keyboard automation utility to have hotkeys for each respective machine. This ought to significantly speed up your workflow.</p>
+<h3 id="revoking-unattended-access"><a class="header" href="#revoking-unattended-access">Revoking Unattended Access</a></h3>
+<p>If you no longer want your machine to be controlled unattended, you can revoke the controller's access. You do not need to be in a session in order to do this.</p>
+<ol>
+<li>Access the Remote Incident Manager icon in your menu extras/status menus.
+<ol>
+<li>If using VoiceOver, press VO+M twice, then locate the Remote Incident Manager menu icon.</li>
+</ol>
+</li>
+<li>Click this icon, or press VO+Space.</li>
+<li>Select the &quot;Revoke Unattended Access&quot; option.</li>
+<li>You will arrive at a list of computers, select the one you want to revoke.</li>
+<li>You will be asked if you wish to revoke the machine; answer yes.</li>
+</ol>
+<!-- end -->
+<p>That's it! The controller will receive a message stating that this machine is no longer available for unattended access. Should they need unattended access again, they can reinitiate the procedure to request permission for unattended access as described above.</p>
+<h1 id="key-command-reference"><a class="header" href="#key-command-reference">Key Command Reference</a></h1>
+<div class="table-wrapper"><table><thead><tr><th>Action</th><th>Command</th></tr></thead><tbody>
+<tr><td>Activate RIM Menu</td><td>Option+Shift+Backspace</td></tr>
+<tr><td>Minimize Session</td><td>Option+Shift+M</td></tr>
+<tr><td>Flip Session</td><td>Option+Shift+F</td></tr>
+<tr><td>Disconnect Session (Controller or Target)</td><td>Option+Shift+D</td></tr>
+<tr><td>Accept Incoming Connection Request</td><td>Option+Shift+Y</td></tr>
+<tr><td>Decline Incoming Connection Request</td><td>Option+Shift+N</td></tr>
+</tbody></table>
+</div><!-- end -->
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="gettingconnected.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="dashboard.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="gettingconnected.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="dashboard.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" charset="utf-8"></script>
+        <script src="mark.min.js" charset="utf-8"></script>
+        <script src="searcher.js" charset="utf-8"></script>
+        <script src="clipboard.min.js" charset="utf-8"></script>
+        <script src="highlight.js" charset="utf-8"></script>
+        <script src="book.js" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Change Log - Remote Incident Manager Manual</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li class="chapter-item expanded "><a href="systemspecs.html"><strong aria-hidden="true">2.</strong> System Requirements</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">3.</strong> Installation</a></li><li class="chapter-item expanded "><a href="gettingconnected.html"><strong aria-hidden="true">4.</strong> Getting Connected</a></li><li class="chapter-item expanded "><a href="workingwithsessions.html"><strong aria-hidden="true">5.</strong> Working within a Session</a></li><li class="chapter-item expanded "><a href="dashboard.html"><strong aria-hidden="true">6.</strong> The RIM Dashboard</a></li><li class="chapter-item expanded "><a href="faq.html"><strong aria-hidden="true">7.</strong> Frequently Asked Questions</a></li><li class="chapter-item expanded "><a href="pricing.html"><strong aria-hidden="true">8.</strong> pricing</a></li><li class="chapter-item expanded "><a href="changelog.html" class="active"><strong aria-hidden="true">9.</strong> Change Log</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Remote Incident Manager Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="change-log"><a class="header" href="#change-log">Change Log</a></h1>
+<p>Versions of RIM will be denoted by headings at level 2. Substantial updates with several features for both platforms will be divided into Mac and Windows subheadings at level 3.</p>
+<h2 id="3213"><a class="header" href="#3213">3.2.13</a></h2>
+<ul>
+<li>Windows: Fixed a problem with keyboard input when connecting to target machines running JAWS 2024.</li>
+</ul>
+<h2 id="3212"><a class="header" href="#3212">3.2.12</a></h2>
+<ul>
+<li>Worked around a rare problem that could prevent the RIM app from connecting to the cloud service.</li>
+</ul>
+<h2 id="3211"><a class="header" href="#3211">3.2.11</a></h2>
+<ul>
+<li>Added a new button to the Connection Details window to request that the target machine send its RIM logs to Pneuma Solutions. Please only use this feature if requested by Pneuma Solutions.</li>
+</ul>
+<h2 id="3210"><a class="header" href="#3210">3.2.10</a></h2>
+<ul>
+<li>Fixed a problem that could cause RIM to stop working until the next application restart if the machine's Internet connection is temporarily unavailable.</li>
+</ul>
+<h2 id="329"><a class="header" href="#329">3.2.9</a></h2>
+<ul>
+<li>macOS: We are unfortunately no longer able to offer automatic stereo microphone input in voice conversations on this platform, because in some cases, this prevented microphone input from working at all on a Mac. Note that this change has no effect on captured audio output from the target machine; that is still stereo.</li>
+</ul>
+<h2 id="328"><a class="header" href="#328">3.2.8</a></h2>
+<ul>
+<li>macOS: Fixed a bug that prevented RIM from coming up when activating the application through the Finder or Dock, rather than using the global hotkey.</li>
+</ul>
+<h2 id="327"><a class="header" href="#327">3.2.7</a></h2>
+<ul>
+<li>Voice conversations now automatically use stereo when the audio hardware supports it. This is useful when using RIM for training in audio production.</li>
+</ul>
+<h2 id="326"><a class="header" href="#326">3.2.6</a></h2>
+<ul>
+<li>Fixed a recently introduced problem that could prevent RIM from working on a fresh operating system installation.</li>
+</ul>
+<h2 id="325"><a class="header" href="#325">3.2.5</a></h2>
+<ul>
+<li>Fixed the message that displays remaining free time.</li>
+</ul>
+<h2 id="324"><a class="header" href="#324">3.2.4</a></h2>
+<ul>
+<li>Localization of RIM into other languages is now in beta. The following languages are currently supported: German, Spanish, French, Italian, and Swedish. To use RIM in one of these languages, press the &quot;Language (BETA)&quot; button at the bottom of the &quot;Provide Help&quot; or &quot;Receive Help&quot; window, then choose your language from the drop-down list and press the &quot;Switch Language&quot; button. We look forward to your feedback.</li>
+</ul>
+<h2 id="321"><a class="header" href="#321">3.2.1</a></h2>
+<ul>
+<li>The process of starting a new RIM session on the controller side is now smoother. The original window, where you entered your keyword or chose a target machine, will not go away until the main session window is ready. If the initial window no longer has focus when the session starts, e.g. if you switched tasks while waiting for the target user to enter a keyword, then RIM will notify you that the session is ready, and the main session window will appear when you return focus to RIM.</li>
+<li>macOS only: As part of the previous change, we modified the way that RIM adds and removes itself in the Dock and the Command+Tab list. Please let us know if you find any problems with the current behavior.</li>
+<li>Windows targets only: If a screen reader is started on the target machine while remote accessibility is active, then remote accessibility will quietly shut down to avoid double speech output.</li>
+</ul>
+<h2 id="320"><a class="header" href="#320">3.2.0</a></h2>
+<p>First official release for Mac OS! New features include:</p>
+<ul>
+<li>ability to configure unattended or prompted sessions from within an interactive session.</li>
+<li>All new permissions instructions for users who are not using VoiceOver.</li>
+</ul>
+<h2 id="3149"><a class="header" href="#3149">3.1.49</a></h2>
+<p>This version provides a consistent, cross-platform way of opening the RIM controller session menu with the mouse. A controller can either click the large RIM icon at the upper-left corner of the session window, or as was previously possible on Windows, they can right-click anywhere on the title bar.</p>
+<h2 id="3148"><a class="header" href="#3148">3.1.48</a></h2>
+<h3 id="mac"><a class="header" href="#mac">Mac</a></h3>
+<ul>
+<li>Added support for the FN+Number key workaround for using the function row on MacBooks.</li>
+<li>RIM for Mac now customizes the menu bar, and in particular, the &quot;About&quot; option on the application menu now opens our own About dialog rather than the generic one.</li>
+</ul>
+<h2 id="3147"><a class="header" href="#3147">3.1.47</a></h2>
+<h3 id="windows"><a class="header" href="#windows">Windows</a></h3>
+<p>When connecting a Mac controller to a Windows target, with both sides using the same non-US keyboard layout, keyboard input from the controller wasn't being translated correctly. Version 3.1.47 for Windows fixes this problem.</p>
+<h2 id="3146"><a class="header" href="#3146">3.1.46</a></h2>
+<ul>
+<li>Added support for the new RIM Personal Community Support subscription package.</li>
+</ul>
+<h2 id="3145"><a class="header" href="#3145">3.1.45</a></h2>
+<h3 id="mac-1"><a class="header" href="#mac-1">Mac</a></h3>
+<p>RIM is now able to automatically resume capturing screen content and audio output if the target machine switches to the lock screen during a session.</p>
+<h2 id="3144"><a class="header" href="#3144">3.1.44</a></h2>
+<h3 id="mac-2"><a class="header" href="#mac-2">Mac</a></h3>
+<ul>
+<li>Implements reboot and reconnect for Mac targets, including both standard and emergency reboots.
+<ul>
+<li>As with unattended access, RIM doesn't come up on the macOS login screen due to platform restrictions, particularly FileVault. So the target user will need to log back in before RIM can reconnect.</li>
+</ul>
+</li>
+<li>The notification about file transfers, introduced in the previous update, is now shown only once per RIM session.</li>
+</ul>
+<h2 id="3143"><a class="header" href="#3143">3.1.43</a></h2>
+<h3 id="mac-3"><a class="header" href="#mac-3">Mac</a></h3>
+<ul>
+<li>This update modifies the user interface for file transfers. When one or more files are placed on the clipboard on either side of the connection, the controller now receives a notification saying that the file transfer can be completed through the RIM menu. If the controller chooses this menu option, the file transfer is performed, and when done, a temporary folder containing the transferred file or files is opened on the destination machine. This method of file transfer is necessary when the destination machine is a Mac. When the destination is a Windows machine, the file transfer can be completed using either this new method or the old method of pasting in File Explorer on the destination machine.</li>
+</ul>
+<h2 id="3142"><a class="header" href="#3142">3.1.42</a></h2>
+<h3 id="mac-4"><a class="header" href="#mac-4">Mac</a></h3>
+<ul>
+<li>RIM for Mac now works as an unattended target. It also performs updates in the background as the Windows version does.
+<ul>
+<li>We still have some work to do on access to the lock screen, and we don't believe we'll be able to provide access to the login screen before a user is logged in at all, due to limitations of the platform.</li>
+<li>we haven't yet figured out how, or if, we'll be able to implement pre-configured target installers, so you'll need to use one of the other available methods of setting up unattended access.</li>
+</ul>
+</li>
+<li>Eliminates one source of latency in audio captured from Mac targets.</li>
+</ul>
+<!-- end -->
+<h2 id="3141"><a class="header" href="#3141">3.1.41</a></h2>
+<h3 id="windows-1"><a class="header" href="#windows-1">Windows</a></h3>
+<p>Fixed a problem that sometimes caused RIM to crash in response to activity on the Windows clipboard during a RIM session.</p>
+<h2 id="3140"><a class="header" href="#3140">3.1.40</a></h2>
+<p>Adds some more logging related to audio on the target. So if you can reproduce laggy audio on the target, please do so with this version, then send logs. </p>
+<h2 id="3139"><a class="header" href="#3139">3.1.39</a></h2>
+<h3 id="mac-5"><a class="header" href="#mac-5">Mac</a></h3>
+<p>This update adds mouse support for Mac targets.
+RIM now requests permission to use macOS accessibility features. For new
+installations, this replaces the input monitoring permission request, so
+the total number of permission steps doesn't go up. But for updates,
+you'll need to grant this permission before you can use RIM after updating.</p>
+<h2 id="3138"><a class="header" href="#3138">3.1.38</a></h2>
+<h3 id="mac-6"><a class="header" href="#mac-6">Mac</a></h3>
+<p>Fixed a crash that was affecting Mac targets at session initialization.</p>
+<h2 id="3137"><a class="header" href="#3137">3.1.37</a></h2>
+<p>This update marks a major milestone in the Mac port of RIM. The remote
+accessibility feature of RIM is now available when connecting to Mac
+targets. Using a special configuration of VoiceOver on the target
+machine, the controller, whether using Windows or Mac, will hear speech
+while the target user does not hear any speech or sound effects. There
+is also no visible indication that VoiceOver is running on the target.
+The process of starting remote accessibility, either automatically or
+manually, works just as it does with Windows targets. And of course,
+when the session ends, the special configuration of VoiceOver is shut
+down, and VoiceOver is restored to its previous settings.</p>
+<p>Note that both Windows and Mac controllers now need to be running
+version 3.1.37 to get full functionality when connecting to a Mac target.</p>
+<h2 id="3136"><a class="header" href="#3136">3.1.36</a></h2>
+<h3 id="windows-2"><a class="header" href="#windows-2">Windows</a></h3>
+<p>The remote accessibility feature is now compatible with NVDA 2023.1.</p>
+<h2 id="3135"><a class="header" href="#3135">3.1.35</a></h2>
+<h3 id="mac-7"><a class="header" href="#mac-7">Mac</a></h3>
+<ul>
+<li>RIM now consistently uses stereo audio, particularly for Mac controllers.</li>
+<li>When using RIM for Mac as a controller with the remote accessibility feature, RIM now uses the voice and speaking rate as defined in the Spoken Content section of system settings.</li>
+</ul>
+<h2 id="3134"><a class="header" href="#3134">3.1.34</a></h2>
+<h3 id="mac-8"><a class="header" href="#mac-8">Mac</a></h3>
+<p>When a Mac controller connects to a Windows target that's not running a screen reader, you can now run the remote accessibility module on the Windows target and get speech output on the Mac controller. Note that you still need to use NVDA keyboard commands when interacting with the Windows target, not VoiceOver commands, and we're using the NVDA laptop keyboard layout. </p>
+<h2 id="3133"><a class="header" href="#3133">3.1.33</a></h2>
+<p>In response to user feedback, we removed the sound effect when displaying notifications about the status of a remote session.</p>
+<h2 id="3132"><a class="header" href="#3132">3.1.32</a></h2>
+<h3 id="mac-9"><a class="header" href="#mac-9">Mac</a></h3>
+<p>RIM now supports the Fn key when using a Mac laptop as a controller.<br />
+Note that for the top row of function keys, RIM always treats them as F1 through F12, and you need to use the Fn key if you want to use these keys as system function keys (for adjusting volume and so on), regardless of how the system preference is set on either end of the connection. We figure that in a remote session, you probably want to use these keys as F keys most of the time anyway. Behavior like using Fn+Left Arrow to press Home works as expected.</p>
+<h2 id="3131"><a class="header" href="#3131">3.1.31</a></h2>
+<h3 id="mac-10"><a class="header" href="#mac-10">Mac</a></h3>
+<ul>
+<li>RIM previously didn't let go of its lock on keyboard input when some dialogs were displayed, such as the dialog requesting permission to access the microphone. This is now fixed.</li>
+<li>When connecting from Mac to Windows or vice versa, it's no longer possible for the controller to trigger the RIM menu on the target machine. This fix requires the corresponding update to RIM for Windows.</li>
+</ul>
+<h3 id="windows-3"><a class="header" href="#windows-3">Windows</a></h3>
+<ul>
+<li>Added a way to send RIM's log files to Pneuma Solutions, introduced for Mac OS in version 3.1.29. Please only use this function if requested by a representative of Pneuma Solutions.</li>
+<li>RIM now plays a sound whenever it displays a notification.</li>
+</ul>
+<h2 id="3130"><a class="header" href="#3130">3.1.30</a></h2>
+<h3 id="mac-11"><a class="header" href="#mac-11">Mac</a></h3>
+<p>RIM will now request permission to display notifications, both on first run and for existing users updating from a previous version. As with most other permissions, granting this permission requires flipping a switch in System Settings. We've also added our own sound for these
+notifications.</p>
+<h2 id="3129"><a class="header" href="#3129">3.1.29</a></h2>
+<h3 id="mac-12"><a class="header" href="#mac-12">Mac</a></h3>
+<ul>
+<li>We believe the problem that some users have reported with requesting keyboard input monitoring permission on machines running Karabiner Elements is now fixed.</li>
+<li>The RIM About dialog now has a button to send logs. Please only use this if requested by Pneuma Solutions.</li>
+</ul>
+<h2 id="3128"><a class="header" href="#3128">3.1.28</a></h2>
+<h3 id="mac-13"><a class="header" href="#mac-13">Mac</a></h3>
+<p>When using RIM as a controller, it is now compatible with advanced keyboard customization tools such as Karabiner Elements.</p>
+<h2 id="3127"><a class="header" href="#3127">3.1.27</a></h2>
+<h3 id="mac-14"><a class="header" href="#mac-14">Mac</a></h3>
+<p>This is a minor update, with just two changes:</p>
+<ul>
+<li>Marked RIM as requiring macOS 13.0 (Ventura) or later.</li>
+<li>Fixed RIM so the virtual keyboard is only connected when RIM is actually running as a target. This means that the Keyboard Setup Assistant won't appear when using RIM as a controller. We're still looking into possible ways to avoid that dialog altogether.</li>
+</ul>
+<h2 id="3126"><a class="header" href="#3126">3.1.26</a></h2>
+<p>Initial beta build of RIM for Mac OS.</p>
+<h2 id="3124"><a class="header" href="#3124">3.1.24</a></h2>
+<ul>
+<li>When connecting to a target machine with lower display resolution or a higher dots-per-inch (DPI) scale factor than the controller, RIM now scales the remote target display to fit the controller's screen, making the remote display easier to work with visually.</li>
+</ul>
+<h2 id="3123"><a class="header" href="#3123">3.1.23</a></h2>
+<ul>
+<li>Added support for prepaid hours.</li>
+</ul>
+<h2 id="3122"><a class="header" href="#3122">3.1.22</a></h2>
+<ul>
+<li>Fixed a bug that sometimes caused RIM on the target machine to get into a loop that prevented unattended connections.</li>
+</ul>
+<h2 id="3121"><a class="header" href="#3121">3.1.21</a></h2>
+<ul>
+<li>Added a new keyboard shortcut, Windows+Shift+M, while in a session window, to minimize the window and return the keyboard focus to the local (controller) machine.</li>
+</ul>
+<h2 id="3120"><a class="header" href="#3120">3.1.20</a></h2>
+<ul>
+<li>Added logging that will help us diagnose reports of unattended targets being intermittently disconnected from RIM.</li>
+</ul>
+<h2 id="3119"><a class="header" href="#3119">3.1.19</a></h2>
+<ul>
+<li>Fixed some corner cases in remote keyboard input handling. In particular, when running JAWS on the target machine, JAWS now correctly recognizes Pause and NumLock key presses from the controller. Please let us know if you find any regressions in keyboard input handling, particularly for non-US keyboard layouts.</li>
+</ul>
+<h2 id="3118"><a class="header" href="#3118">3.1.18</a></h2>
+<ul>
+<li>Fixed a problem that prevented RIM from updating itself on target machines that were on the Windows Sign-in screen with no active user session.</li>
+</ul>
+<h2 id="3117"><a class="header" href="#3117">3.1.17</a></h2>
+<ul>
+<li>Since the previous update, we've received reports of the Shift modifier being stuck on the target machine when running JAWS. We believe this update resolves that problem. Please let us know if you continue to have trouble with stuck modifiers.</li>
+<li>Fixed a bug that caused RIM to shut down NVDA on the target machine at the end of a session if NVDA was started on the target machine after enabling remote accessibility.</li>
+</ul>
+<h2 id="3116"><a class="header" href="#3116">3.1.16</a></h2>
+<ul>
+<li>When running JAWS on the target machine with Unified Keyboard Processing enabled, JAWS now reliably responds to keystrokes from the controller.</li>
+<li>Fixed an error that sporadically occurs when starting the remote accessibility add-on after installing or updating the NVDA add-on on the controller machine.</li>
+</ul>
+<h2 id="3115"><a class="header" href="#3115">3.1.15</a></h2>
+<ul>
+<li>When you connect to a target machine with no running screen reader, RIM will automatically enable remote accessibility if you are running a screen reader on the controller machine. If you're running a screen reader other than NVDA on the controller machine, RIM will even automatically shut down that screen reader and start NVDA if you have it installed.</li>
+<li>Fixed issues that prevented the remote accessibility module from using your local NVDA configuration settings such as keyboard layout and typing echo.</li>
+</ul>
+<h2 id="3114"><a class="header" href="#3114">3.1.14</a></h2>
+<ul>
+<li>The process of re-establishing a connection when there is a connectivity issue is now more robust.</li>
+<li>Fixed a problem that sometimes caused RIM's background update process to stop.</li>
+<li>If the controller is running an older version of RIM than the target, the menu no longer includes an option to update the target.</li>
+<li>If a screen reader or RIM's remote accessibility module is running on the target machine, you can now stop it through an option on the menu.</li>
+</ul>
+<h2 id="3113"><a class="header" href="#3113">3.1.13</a></h2>
+<ul>
+<li>Fixed a bug that caused users to get logged out of RIM after installing some Windows updates.</li>
+</ul>
+<h2 id="3112"><a class="header" href="#3112">3.1.12</a></h2>
+<ul>
+<li>By popular demand, RIM no longer prompts for a comment at the end of each session. You can still post comments on sessions in the RIM Dashboard. We may add a configurable option to prompt for a comment as a feature in the future.</li>
+</ul>
+<h2 id="3111"><a class="header" href="#3111">3.1.11</a></h2>
+<ul>
+<li>If the target machine is running at least this version of RIM, but hasn't yet updated to the latest version, the controller can now force the target machine to update its installation of RIM through a new option on the session menu.</li>
+</ul>
+<h2 id="3110"><a class="header" href="#3110">3.1.10</a></h2>
+<ul>
+<li>You can now optionally add a comment at the end of a RIM session. Session comments can be viewed in the RIM Dashboard.</li>
+<li>The Connection Details window is enhanced. The statistics are updated live as long as the window is open, and the window now includes information about the target machine.</li>
+</ul>
+<h2 id="319"><a class="header" href="#319">3.1.9</a></h2>
+<ul>
+<li>Fixed a problem that sometimes caused a RIM session to get stuck trying to reconnect.</li>
+</ul>
+<h2 id="318"><a class="header" href="#318">3.1.8</a></h2>
+<ul>
+<li>Fixed a problem that sometimes prevented the remote accessibility module from starting.</li>
+</ul>
+<h2 id="317"><a class="header" href="#317">3.1.7</a></h2>
+<ul>
+<li>When choosing a target machine for an unattended or prompted session, you can now search through your target machines. To do this, on the Provide Help screen, press &quot;Choose machine&quot; as before, tab to the &quot;Search&quot; field, enter the text to search for, then either press Enter or press the &quot;Search&quot; button.</li>
+</ul>
+<h2 id="316"><a class="header" href="#316">3.1.6</a></h2>
+<ul>
+<li>Fixed a problem that sometimes made it impossible to interrupt JAWS speech on the secure desktop.</li>
+</ul>
+<h2 id="315"><a class="header" href="#315">3.1.5</a></h2>
+<ul>
+<li>Fixed a visual display bug that caused the list of unattended target machines to overlap with the buttons below it.</li>
+</ul>
+<h2 id="314"><a class="header" href="#314">3.1.4</a></h2>
+<ul>
+<li>Enterprise customers can now deploy RIM using an MSI-based installer.</li>
+</ul>
+<h2 id="313"><a class="header" href="#313">3.1.3</a></h2>
+<ul>
+<li>Fixed a bug that could cause RIM to crash if the RIM menu is open when a session is reconnected.</li>
+</ul>
+<h2 id="312"><a class="header" href="#312">3.1.2</a></h2>
+<ul>
+<li>Adjusted the visual style to be more accessible to low-vision users.</li>
+<li>Added error messages if required fields are left empty.</li>
+</ul>
+<h2 id="311"><a class="header" href="#311">3.1.1</a></h2>
+<ul>
+<li>When you press the &quot;RIM Dashboard&quot; button in the Provide Help window, that window now stays open.</li>
+</ul>
+<h2 id="310"><a class="header" href="#310">3.1.0</a></h2>
+<p>This release adds a complete management dashboard for controllers.</p>
+<ul>
+<li>All subscribers have access to the dashboard, with feature sets determined by subscription tier.</li>
+<li>Removed the in-app functions for renaming, deleting, and creating installers for unattended machines as this is now part of the dashboard</li>
+<li>Brought back the welcome page.</li>
+</ul>
+<h2 id="308"><a class="header" href="#308">3.0.8</a></h2>
+<p>Fixed a bug that sometimes prevented remote screen output from working when a User Account Control prompt was displayed.</p>
+<h2 id="307"><a class="header" href="#307">3.0.7</a></h2>
+<ul>
+<li>This is a bug-fix update.</li>
+</ul>
+<h2 id="306"><a class="header" href="#306">3.0.6</a></h2>
+<ul>
+<li>Users with either a RIM Enterprise subscription or a RIM Pro subscription with the Enterprise add-on can now create fully silent pre-configured installers for unattended access. To run an installer in silent mode, whether it's the standard installer or a pre-configured installer from an enterprise account, use the /S command line switch (note the capitalization) when running the installer.</li>
+</ul>
+<h2 id="305"><a class="header" href="#305">3.0.5</a></h2>
+<ul>
+<li>This is a bug-fix update.</li>
+</ul>
+<h2 id="304"><a class="header" href="#304">3.0.4</a></h2>
+<ul>
+<li>This update restores compatibility with Windows 7.</li>
+</ul>
+<h2 id="303"><a class="header" href="#303">3.0.3</a></h2>
+<ul>
+<li>RIM no longer mistakenly shows the &quot;Create an Installer for Unattended Access&quot; button if you don't have a subscription.</li>
+</ul>
+<h2 id="302"><a class="header" href="#302">3.0.2</a></h2>
+<ul>
+<li>If you have purchased one or more RIM passes, you now have control over whether a particular session will use a RIM pass or the free tier, as well as which pass will be used. RIM also tells you how much time is left on your selected pass.</li>
+</ul>
+<h2 id="301"><a class="header" href="#301">3.0.1</a></h2>
+<ul>
+<li>This update introduces support for the new RIM personal passes, which let you use RIM for remote technical support or training for up to 24 hours for as little as $10. <a href="https://getrim.app/signup/pass">Try a RIM pass today.</a></li>
+<li>The button that used to be called &quot;Create a Pre-Configured Target Installer&quot; is now called &quot;Create an Installer for Unattended Access&quot;.</li>
+<li>When renaming an unattended target machine, the existing name is now filled in and selected for easy editing.</li>
+</ul>
+<h2 id="300"><a class="header" href="#300">3.0.0</a></h2>
+<p>This release concludes the RIM public beta. RIM pricing plans and restrictions on free usage are now in effect. For free accounts, RIM now displays a usage meter along with a purchase button.</p>
+<h2 id="0122"><a class="header" href="#0122">0.12.2</a></h2>
+<p>Fixed a bug that prevented the new Windows+Shift+Backspace hotkey from working in some situations.</p>
+<h2 id="0121"><a class="header" href="#0121">0.12.1</a></h2>
+<ul>
+<li>The Control+Shift+Backspace hotkey is no longer active in RIM. The official hotkey is now Windows+Shift+Backspace. Windows+Shift+Escape also remains available during a session.</li>
+<li>RIM's new main hotkey, Windows+Shift+Backspace, is now active at all times on machines where RIM is installed, unless another application claims the hotkey first. When a RIM session is active on the controller, this hotkey opens the RIM menu if the session window is focused, or focuses the session window if it's in the background. On the target, this hotkey opens the RIM target menu while the session is active. On either side, if a session is not active, this hotkey opens the RIM window to start a new session.</li>
+<li>When requesting unattended access, RIM now reliably focuses the approval dialog on the target machine.</li>
+<li>Updated the remote accessibility module.</li>
+</ul>
+<h2 id="0120"><a class="header" href="#0120">0.12.0</a></h2>
+<p>You can now create a pre-configured installer that will automatically register all machines on which it is installed as unattended targets in your RIM account.</p>
+<p>To do this, use the new button called &quot;Create a Pre-Configured Target Installer&quot;, on the &quot;Provide Help&quot; screen. You will then need to enter a base name for the target machine(s); RIM will automatically add the host name of each target machine to this base name. Once target machines are registered, you can rename them as with any unattended target. You can also set the expiration date of the installer, which must be between 7 and 30 days. Once RIM has created the installer, you'll get a link that you can either share directly with the target users, or download yourself so you can share the installer some other way.</p>
+<p>Note that when a target user runs the pre-configured installer, it will first show them a confirmation dialog which explains what the installer will do. This dialog includes the name of the controller who created the installer. This confirmation step is designed to prevent abuse. A completely silent mode will be available for enterprise customers.</p>
+<h2 id="0116"><a class="header" href="#0116">0.11.6</a></h2>
+<ul>
+<li>RIM now has a new option for registering a machine for unattended access under your RIM account without having to start a remote session using a keyword. On the machine that you want to register, press the new button called &quot;Register This Machine for Unattended Access&quot;, on the Receive Help screen. Then log into your RIM account if you haven't already done so on that machine, enter a name for the machine, and you're done. Note that we're still working on a way to customize the RIM installer, to enable mass deployment and make it as easy as possible to set up unattended access on machines that you don't already have access to.</li>
+<li>RIM now prevents you from trying to open an unattended connection to the same machine where you're running the controller.</li>
+<li>We're now experimenting with a third hotkey to open the RIM menu: Windows+Shift+Backspace. That means there are now three options: Windows+Shift+Escape, Windows+Shift+Backspace, and Control+Shift+Backspace. We haven't yet made a final decision on which hotkey or hotkeys to keep, but we will decide before the end of the public beta. We appreciate your feedback.</li>
+<li>Most options on the RIM menu now have single-letter keyboard shortcuts that you can press once you've opened the menu.</li>
+<li>This update introduces a more reliable solution to the intermittent problems that users have reported with JAWS not recognizing keyboard input from RIM. Please let us know if you continue to have problems with this scenario.</li>
+</ul>
+<h2 id="0115"><a class="header" href="#0115">0.11.5</a></h2>
+<ul>
+<li>This update introduces two new hotkeys. Windows+Shift+D disconnects the session when pressed on either side. For the controller, Windows+Shift+F flips the session.</li>
+<li>This update adds safeguards against keyboard modifiers becoming stuck on either machine.</li>
+<li>There's a new menu option, &quot;Lock the Target Machine&quot;, which is equivalent to pressing Windows+L on the target.</li>
+<li>RIM now has an &quot;About&quot; window, where you can check the version number, contact Pneuma Solutions for support and feedback, read the manual, and view the version change log.</li>
+<li>RIM no longer prompts for feedback at the end of a session or when closing the &quot;Provide Help&quot; window.</li>
+</ul>
+<!-- end -->
+<h2 id="0114"><a class="header" href="#0114">0.11.4</a></h2>
+<p>This update fixes a few bugs in the reboot and reconnect process. We haven't yet diagnosed everything that has been reported, but we were able to find and fix a few issues in our own testing.</p>
+<h2 id="0113"><a class="header" href="#0113">0.11.3</a></h2>
+<ul>
+<li>RIM now updates itself in the background on all machines. RIM now includes the currently installed version number in the tooltip of its tray icon. This is the last update users will need to install manually, irrespective of machine configuration.</li>
+<li>If the target machine is rebooted, but not using RIM’s Reboot and Reconnect feature, RIM now asks the controller whether they want to reconnect to the target after the reboot. If the controller answers no, then the target won’t wait for a reconnect after the reboot.</li>
+</ul>
+<!-- end -->
+<h2 id="0112"><a class="header" href="#0112">0.11.2</a></h2>
+<ul>
+<li>RIM now updates itself in the background on unattended target machines. This is the last update that you will need to install manually on your unattended targets.</li>
+<li>When updating before an interactive session, RIM no longer needs to go through User Account Control. This means that non-administrator users can update RIM once it has been installed for them by an administrator.</li>
+</ul>
+<h2 id="0111"><a class="header" href="#0111">0.11.1</a></h2>
+<p>This is a bug-fix update. Please note that unattended targets still need to be updated manually by running the latest RIM installer. However, now you will be able to connect to an unattended target after the installation is done, without requiring someone to close the &quot;Receive Help&quot; window.</p>
+<h2 id="0110"><a class="header" href="#0110">0.11.0</a></h2>
+<ul>
+<li>The Reboot and Reconnect feature is now implemented. Using the new Reboot and Reconnect option on the controller’s RIM menu, you can do either a standard or emergency reboot, and automatically continue the session when the reboot is complete. RIM will also reconnect if the target machine reboots for some other reason, such as when an installer reboots the machine.</li>
+<li>RIM also automatically attempts to reconnect if the connection drops for any reason. This will help with unreliable Internet connections.</li>
+<li>When running an unattended session or using Reboot and Reconnect, you can now use RIM while the target machine is on the Windows Logon screen. Note that RIM will need to reconnect the session when the target machine transitions from the logon screen to the main desktop. This is a known limitation of the current implementation which we may address in a future update.</li>
+<li>RIM is now fully functional when the target user does not have administrator privileges on the target machine, as long as the Remote Incident Manager Host service is running on that machine. Note that administrator privileges are still required to install RIM updates. Also note that new versions of RIM still need to be manually installed on unattended targets. We are working on solutions to both of these problems.</li>
+</ul>
+<!-- end -->
+<h2 id="010100"><a class="header" href="#010100">0.10.10.0</a></h2>
+<p>If you've set up unattended access to one or more target machines, you can now create a shortcut to directly access any of these machines. Just press the &quot;Create Shortcut&quot; button under the list of unattended targets, and RIM will create a shortcut on your desktop.</p>
+<h2 id="0109"><a class="header" href="#0109">0.10.9</a></h2>
+<p>RIM now works on a target machine that has no audio device. This, combined with the existing remote accessibility module, opens up access to servers and virtual machines that could previously not be accessed with a screen reader except through RDP and its very suboptimal audio output.</p>
+<h2 id="0108"><a class="header" href="#0108">0.10.8</a></h2>
+<ul>
+<li>If you haven’t yet pre-ordered the first year of your RIM Pro subscription, you can now easily do so using the new button on the “Provide Help” screen. We are also introducing new pricing options for adding extra controllers and concurrent channels to a RIM Pro subscription. You can add up to two additional controller users and two additional channels for $500 per year each. RIM continues to be free during the public beta, but if you pre-order your subscription now, you will have uninterrupted service when the public beta concludes on September 1.</li>
+<li>We are introducing Control+Shift+Backspace as an alternative hotkey for opening the RIM menu on both sides of the connection. We also still support Windows+Shift+Escape for now, but the plan is to standardize on Control+Shift+Backspace as the one hotkey for all stages of RIM.</li>
+<li>If you press the “Provide Help Instead” button on the “Receive Help” screen, RIM no longer sets this choice as the default until you have logged into your RIM account.</li>
+<li>Fixed a few JavaScript errors that occurred in rare cases.</li>
+</ul>
+<!-- end -->
+<h2 id="0107"><a class="header" href="#0107">0.10.7</a></h2>
+<p>you can now use the mouse wheel in a remote session.</p>
+<h2 id="0106"><a class="header" href="#0106">0.10.6</a></h2>
+<p>Hopefully fixed all remaining issues causing the installation process to hang.</p>
+<h2 id="0105"><a class="header" href="#0105">0.10.5</a></h2>
+<p>This version includes some changes under the hood. In particular, we've included updates to the installation and underlying packages to address issues causing the installation to hang.</p>
+<h2 id="0104"><a class="header" href="#0104">0.10.4</a></h2>
+<ul>
+<li>There is now an option on the RIM menu to send Control+Alt+Delete to the target machine.</li>
+<li>You can now open the RIM menu by right-clicking on the title bar of the session window. We plan to add the option of opening the RIM menu by clicking on the RIM icon at the left end of the title bar as well.</li>
+</ul>
+<!-- end -->
+<h2 id="0103"><a class="header" href="#0103">0.10.3</a></h2>
+<ul>
+<li>The controller can now flip an unattended session.</li>
+<li>The controller can now rename an unattended target machine.</li>
+<li>Fixed a bug that sometimes caused the session to become unresponsive after copying to the clipboard.</li>
+<li>Fixed a bug that sometimes caused starting the remote accessibility module to fail with a JavaScript error.</li>
+</ul>
+<!-- end -->
+<h2 id="0102"><a class="header" href="#0102">0.10.2</a></h2>
+<p>Fixed a conflict between the RIM Client Support NVDA addon and the Dropbox addon.</p>
+<h2 id="0101"><a class="header" href="#0101">0.10.1</a></h2>
+<ul>
+<li>You can now pre-order the first year of your subscription to RIM Pro for $999. The link to pre-order will be available in the feedback window when you finish a remote session. Or you can follow the direct link here: <a href="https://getrim.app/signup/rim_preorder">Pre-order RIM Pro.</a></li>
+<li>If you have unattended target machines in your RIM account, the button to start an unattended session is now more reliably displayed on the “Provide Help” screen.</li>
+<li>When flipping a session, the original controller can now flip the session back, by opening the RIM menu with Windows+Shift+Escape.</li>
+</ul>
+<!-- end -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="pricing.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="pricing.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" charset="utf-8"></script>
+        <script src="mark.min.js" charset="utf-8"></script>
+        <script src="searcher.js" charset="utf-8"></script>
+        <script src="clipboard.min.js" charset="utf-8"></script>
+        <script src="highlight.js" charset="utf-8"></script>
+        <script src="book.js" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

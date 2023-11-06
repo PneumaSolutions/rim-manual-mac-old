@@ -1,0 +1,278 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Frequently Asked Questions - Remote Incident Manager Manual</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li class="chapter-item expanded "><a href="systemspecs.html"><strong aria-hidden="true">2.</strong> System Requirements</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">3.</strong> Installation</a></li><li class="chapter-item expanded "><a href="gettingconnected.html"><strong aria-hidden="true">4.</strong> Getting Connected</a></li><li class="chapter-item expanded "><a href="workingwithsessions.html"><strong aria-hidden="true">5.</strong> Working within a Session</a></li><li class="chapter-item expanded "><a href="dashboard.html"><strong aria-hidden="true">6.</strong> The RIM Dashboard</a></li><li class="chapter-item expanded "><a href="faq.html" class="active"><strong aria-hidden="true">7.</strong> Frequently Asked Questions</a></li><li class="chapter-item expanded "><a href="pricing.html"><strong aria-hidden="true">8.</strong> pricing</a></li><li class="chapter-item expanded "><a href="changelog.html"><strong aria-hidden="true">9.</strong> Change Log</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Remote Incident Manager Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="frequently-asked-questions"><a class="header" href="#frequently-asked-questions">Frequently Asked Questions</a></h1>
+<p>Here are answers to some common questions concerning RIM. When faced with an issue, please refer to this document whenever possible. If your question is not covered, please <a href="https://pneumasolutions.com/contact/">Contact us.</a></p>
+<h2 id="compatibility"><a class="header" href="#compatibility">Compatibility</a></h2>
+<h3 id="what-versionss-are-supported"><a class="header" href="#what-versionss-are-supported">What versions(s) are supported?</a></h3>
+<p>RIM supports Mac OS Ventura along with future versions, be they Intel or Apple Silicon. You as a Mac user can provide support to Windows targets, and Windows users can provide support to your Mac.</p>
+<h3 id="what-about-mac-os-versions-before-ventura"><a class="header" href="#what-about-mac-os-versions-before-ventura">What about Mac OS versions before Ventura?</a></h3>
+<p>Some features of RIM depend on functionality newly introduced in Ventura, making compatibility with previous versions difficult to implement.</p>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<h3 id="why-so-many-permissions-requests"><a class="header" href="#why-so-many-permissions-requests">Why so many permissions requests?</a></h3>
+<p>This is unfortunately beyond our control, as Mac OS requires that we use their avenues for requesting the necessary permissions needed for RIM. We have no control over the UX, so can only go as far as providing as much instruction as we can.</p>
+<h2 id="connection-information"><a class="header" href="#connection-information">Connection Information</a></h2>
+<h3 id="generally-speaking-how-responsive-is-rim"><a class="header" href="#generally-speaking-how-responsive-is-rim">Generally speaking, how responsive is RIM?</a></h3>
+<p>The roundtrip latency during an RIM session is extremely minimal. Because we don't rely on a central service, most of the time your connections are direct from one computer to another - this is what is known as peer-to-peer. If your network configuration doesn't allow for peer-to-peer connections, we fall back to any number of relays located around the world rather than relying on one central server. Thus, even then your latency will still be farely minimal.</p>
+<h3 id="where-are-your-relays-located"><a class="header" href="#where-are-your-relays-located">Where are your relays located?</a></h3>
+<p>Currently, we offer relays in the following locations:</p>
+<ul>
+<li>U.S.
+<ul>
+<li>Virginia</li>
+<li>California</li>
+</ul>
+</li>
+<li>Teronto, Canada</li>
+<li>London, England</li>
+<li>Warsaw, Poland</li>
+<li>Bangalore, India</li>
+<li>Singapore</li>
+<li>Sidney, Australia</li>
+<li>Sao Paulo, Brazil</li>
+</ul>
+<!-- end -->
+<h2 id="general-session-troubleshooting"><a class="header" href="#general-session-troubleshooting">General Session Troubleshooting</a></h2>
+<h3 id="the-target-machine-to-which-i-am-connected-doesnt-respond-properly-to-keyboard-commands-that-work-fine-on-my-keyboard-whats-going-on"><a class="header" href="#the-target-machine-to-which-i-am-connected-doesnt-respond-properly-to-keyboard-commands-that-work-fine-on-my-keyboard-whats-going-on">The target machine to which I am connected doesn't respond properly to keyboard commands that work fine on my keyboard. What's going on?</a></h3>
+<p>This could be due to a conflict in keyboard layouts. On rare occasions, if a keyboard layout is different enough from your own it may confuse RIM. Should that occur, please contact us with a report containing information about the keyboard layout of both machines.</p>
+<h3 id="after-a-computer-is-reimaged-and-has-been-reconfigured-with-the-same-computer-name-is-there-anything-that-needs-to-be-done-to-get-rim-up-and-running-again"><a class="header" href="#after-a-computer-is-reimaged-and-has-been-reconfigured-with-the-same-computer-name-is-there-anything-that-needs-to-be-done-to-get-rim-up-and-running-again">After a computer is reimaged and has been reconfigured with the same computer name, is there anything that needs to be done to get RIM up and running again?</a></h3>
+<p>Simply remove the machine from your account, reinstall RIM, then add the machine back into your account.</p>
+<h2 id="pricing-and-payments"><a class="header" href="#pricing-and-payments">Pricing and Payments</a></h2>
+<h3 id="so-getting-help-from-a-person-over-rim-is-totally-free-right"><a class="header" href="#so-getting-help-from-a-person-over-rim-is-totally-free-right">So, getting help from a person over RIM is totally free, right?</a></h3>
+<p>You bet! The subscriptions and/or one-off payments are for individuals and organizations seeking to offer remote assistance. No need to worry about getting a subscription if you're the person receiving help. In fact, you do not even have to set up an account if you are merely receiving help.</p>
+<h3 id="i-dont-really-do-remote-assistance-regularly-but-i-may-be-helping-a-friend-or-family-member-on-occasion-are-there-any-options-that-dont-involve-a-subscription"><a class="header" href="#i-dont-really-do-remote-assistance-regularly-but-i-may-be-helping-a-friend-or-family-member-on-occasion-are-there-any-options-that-dont-involve-a-subscription">I don't really do remote assistance regularly, but I may be helping a friend or family member on occasion. Are there any options that don't involve a subscription?</a></h3>
+<p>Certainly! We do accommodate as many use cases as we can.</p>
+<ul>
+<li>Anyone can assist a user over RIM for free for up to 30 minutes a day. So if you need to help someone install some software, fix a problem real quick, or send over a few files, we've got you covered. These minutes don't have to be used in one sitting.</li>
+<li>There are, of course, going to be situations where a particular issue requires a little more time. Or maybe you're assisting someone learning a new piece of software and might be connecting on and off over the next few days. That's where our day passes and incident passes come in.
+<ul>
+<li>Incident passes allow you to connect to a single target as many times as is needed over a 24 hour period.</li>
+<li>Day passes allow you to connect to multiple targets over a 24 hour period.</li>
+<li>Packages of prepaid hours allow you to have a set number of hours available to be used entirely on your own time.</li>
+</ul>
+</li>
+<li>You can accumulate several of these passes and hourly packages and use them whenever the time calls for them. If you have multiple day passes, for instance, you do not need to use them consecutively. Similarly, You don't need to use your prepaid hours in one session or 24 hour period.</li>
+</ul>
+<!-- end -->
+<h3 id="i-purchased-a-package-of-prepaid-hours-what-happens-to-my-free-daily-allotment"><a class="header" href="#i-purchased-a-package-of-prepaid-hours-what-happens-to-my-free-daily-allotment">I purchased a package of prepaid hours. What happens to my free daily allotment?</a></h3>
+<p>Good news: Your free 30 minute daily allotment is not going anywhere! When you start a keyword-based session, RIM will start off by using your free 30 minute daily allotment. Your prepaid time will be used after your free 30 minutes is up.</p>
+<h3 id="how-long-will-my-prepaid-hours-last-are-they-tied-in-with-my-subscription"><a class="header" href="#how-long-will-my-prepaid-hours-last-are-they-tied-in-with-my-subscription">How long will my prepaid hours last? Are they tied in with my subscription?</a></h3>
+<p>Prepaid hours are entirely separate from your subscription. That being said, your prepaid hours will remain in your account for one (1) year past the date they were first used.</p>
+<h3 id="how-do-i-go-about-bringing-rim-to-the-attention-of-my-place-of-work"><a class="header" href="#how-do-i-go-about-bringing-rim-to-the-attention-of-my-place-of-work">How do I go about bringing RIM to the attention of my place of work?</a></h3>
+<p>We've assembled a <a href="https://sak.getrim.app">Self-Advocacy Kit</a> (SAK). A packet of e-mail formatted letters you can send to appropriate individuals on behalf of yourself or an employee. For the record, RIM provides the same functionality as less accessible mainstream solutions. As such, RIM can replace an existing infrastructure, rather than be used alongside one. It is therefore considered a reasonable accessibility accommodation and should be provided to you by your organization. Accessibility isn't a favor, it's a right to inclusivity.</p>
+<h3 id="what-payment-methods-do-you-accept"><a class="header" href="#what-payment-methods-do-you-accept">What payment methods do you accept?</a></h3>
+<p>We process payments through Stripe, so we are able to directly accept Visa, Mastercard, Amex, or Discover. Additionally, Stripe can accept payments via Google Pay.</p>
+<h3 id="how-do-these-passes-work-does-the-clock-start-immediately-upon-payment-or-on-the-day-i-initiate-the-session"><a class="header" href="#how-do-these-passes-work-does-the-clock-start-immediately-upon-payment-or-on-the-day-i-initiate-the-session">How do these passes work? Does the clock start immediately upon payment, or on the day I initiate the session?</a></h3>
+<p>Passes only begin when the controller initiates the session. So if the target's machine fails on them requiring a trip to the shop and a same-day turnaround is not possible, you can simply hold off until the machine is back in good shape and your day pass will still be waiting for you.</p>
+<h3 id="so-this-means-these-passes-dont-expire"><a class="header" href="#so-this-means-these-passes-dont-expire">So this means these passes don't expire?</a></h3>
+<p>No. Rest assured that your accumulation of day passes will be waiting patiently for you to activate them whenever you're ready.</p>
+<h3 id="what-happens-if-i-connect-to-another-machine-on-the-day-an-incident-pass-has-been-used"><a class="header" href="#what-happens-if-i-connect-to-another-machine-on-the-day-an-incident-pass-has-been-used">What happens if I connect to another machine on the day an incident pass has been used?</a></h3>
+<p>That depends. If the machine is within your subscription, I.E. if you're accessing your home machine while on the road, then it's business as usual. Any other connections that aren't the initial target you connected to will work under the usual 30 minute allotment.</p>
+<h3 id="i-hold-an-active-personal-subscription-would-i-still-be-able-to-assist-a-user-outside-the-group-of-targets-for-up-to-30-minutes-or-via-a-pass"><a class="header" href="#i-hold-an-active-personal-subscription-would-i-still-be-able-to-assist-a-user-outside-the-group-of-targets-for-up-to-30-minutes-or-via-a-pass">I hold an active personal subscription. Would I still be able to assist a user outside the group of targets for up to 30 minutes, or via a pass?</a></h3>
+<p>Yes! Your 30 minute daily allotment is still present for any machine outside of your subscription. Additionally, acquiring a subscription does not replace any existing passes you may have.</p>
+<h3 id="i-have-a-personal-subscription-and-the-target-computer-underwent-a-hardware-upgrade-will-rim-count-this-as-a-machine-switch"><a class="header" href="#i-have-a-personal-subscription-and-the-target-computer-underwent-a-hardware-upgrade-will-rim-count-this-as-a-machine-switch">I have a personal subscription, and the target computer underwent a hardware upgrade. Will Rim count this as a machine switch?</a></h3>
+<p>Only if RIM needs to be reinstalled. So, while a hard drive upgrade or any other situation requiring a Windows reinstallation would be considered a machine switch, upgrading the ram would not.</p>
+<h3 id="our-company-bought-the-pro-subscription-but-we-have-two-techs---one-that-does-help-desk-during-the-day-and-a-system-maintenance-tech-that-works-in-the-evening-would-we-be-able-to-assign-the-evening-sysadmin-a-controller-seat"><a class="header" href="#our-company-bought-the-pro-subscription-but-we-have-two-techs---one-that-does-help-desk-during-the-day-and-a-system-maintenance-tech-that-works-in-the-evening-would-we-be-able-to-assign-the-evening-sysadmin-a-controller-seat">Our company bought the pro subscription, but we have two techs - one that does help-desk during the day, and a system maintenance tech that works in the evening. Would we be able to assign the evening sysadmin a controller seat?</a></h3>
+<p>Definitely. In situations where multiple technitions will be using RIM, we offer up to two (2) additional controller seats for $50 a month per seat - $500 a year per seat - to accompany the pro plan if needed. This will make it easier for multiple controllers at different workstations or offices to provide remote support.<br />
+If you have multiple controller seats, you can purchase additional channels for them so that sessions can run simultaneously. Each additional channel is $50 a month, or $500 a year. </p>
+<h2 id="security"><a class="header" href="#security">Security</a></h2>
+<h3 id="are-rim-sessions-encrypted"><a class="header" href="#are-rim-sessions-encrypted">Are RIM sessions encrypted?</a></h3>
+<p>Yes. All sessions across all platforms, be they direct peer-to-peer connections or connections using a relay, are encrypted end to end using Datagram Transport Layer Security (DTLS). This is the same technology seen in the HTTPS protocol that modern websites implement for security.</p>
+<h3 id="can-pneuma-solutions-eavesdrop-on-sessions-relayed-by-the-public-cloud"><a class="header" href="#can-pneuma-solutions-eavesdrop-on-sessions-relayed-by-the-public-cloud">Can Pneuma Solutions eavesdrop on sessions relayed by the public cloud?</a></h3>
+<p>No. Session key negotiation and encryption are performed end to end between the controller and the target. In other words, everything is encrypted before it even leaves your device. That way, the cloud service merely relays the data as is, making it impossible for the service to decipher the data.</p>
+<h3 id="what-measures-have-been-taken-to-prevent-remote-code-execution-rce-vulnerabilities"><a class="header" href="#what-measures-have-been-taken-to-prevent-remote-code-execution-rce-vulnerabilities">What measures have been taken to prevent remote code execution (RCE) vulnerabilities?</a></h3>
+<p>All RIM code which is exposed to input from the network is written in <a href="https://www.memorysafety.org/docs/memory-safety/">memory-safe programming languages</a> including Rust and JavaScript.</p>
+<h3 id="is-rim-hipaa-compliant"><a class="header" href="#is-rim-hipaa-compliant">Is RIM HIPAA-compliant?</a></h3>
+<p>Yes. The best configuration in this case would be an on-premises deployment, so please <a href="https://pneumasolutions.com/contact/">get in touch with us</a> if your use case depends on this.</p>
+<h3 id="do-any-ports-need-to-be-opened-on-the-target-or-controller"><a class="header" href="#do-any-ports-need-to-be-opened-on-the-target-or-controller">Do any ports need to be opened on the target or controller?</a></h3>
+<p>No and no.</p>
+<h3 id="what-connections-would-need-to-be-allowed-on-a-network-in-order-for-rim-to-function"><a class="header" href="#what-connections-would-need-to-be-allowed-on-a-network-in-order-for-rim-to-function">What connections would need to be allowed on a network in order for RIM to function?</a></h3>
+<p>When utilizing the public cloud, an https connection to <a href="https://getrim.app">https://getrim.app</a> is required. In optimal cases this is enough for RIM to establish a peer-to-peer connection between the controller and the target. However, it helps to allow UDP connections through ports 19302 and 3478 (the standard STUN and TURN ports). This ensures that if a relay is being utilized, RIM will not have to fall back to a tcp connection on port 443.</p>
+<h3 id="does-rim-run-in-the-background-and-if-so-will-it-appear-in-my-commandtab-list"><a class="header" href="#does-rim-run-in-the-background-and-if-so-will-it-appear-in-my-commandtab-list">Does RIM run in the background, and if so will it appear in my Command+Tab list?</a></h3>
+<p>RIM runs in the background in order to process automatic updates, receive unattended/prompted connection requests, and enable use of the goobal Option+Shift+Backspace keyboard command. It will not phone home for any other purpose, and no personally identifiable information is transferred.<br />
+RIM will not appear in your Command+Tab list, but it will appear in the status menus that contain your battery, WiFi connection information, etc.</p>
+<h2 id="remote-accessibility-module"><a class="header" href="#remote-accessibility-module">Remote Accessibility Module</a></h2>
+<h3 id="is-there-anything-the-target-machine-needs-to-configure-for-first-time-use-of-the-remote-accessibility-module"><a class="header" href="#is-there-anything-the-target-machine-needs-to-configure-for-first-time-use-of-the-remote-accessibility-module">Is there anything the target machine needs to configure for first-time use of the Remote Accessibility Module?</a></h3>
+<p>Not at all! There are no dialogue boxes, permission request screens or anything of the sort.</p>
+<h3 id="does-the-remote-accessibility-module-work-on-secure-screens-such-as-the-lock-screen"><a class="header" href="#does-the-remote-accessibility-module-work-on-secure-screens-such-as-the-lock-screen">Does the Remote Accessibility Module work on secure screens such as the lock screen?</a></h3>
+<p>Yes! Since the RIM host runs with elevated privileges, this allows us to leverage the Remote Accessibility Module for secure screens. The only exception to this is FileVault's logon window.</p>
+<h2 id="unattended-sessions"><a class="header" href="#unattended-sessions">Unattended Sessions</a></h2>
+<h3 id="are-voice-conversations-supported-during-unattended-sessions"><a class="header" href="#are-voice-conversations-supported-during-unattended-sessions">Are voice conversations supported during unattended sessions?</a></h3>
+<p>No. However, prompted sessions do support voice conversations.</p>
+<h3 id="if-i-delete-an-unattended-machine-from-my-controller-account-will-it-automatically-revoke-permission-on-the-target"><a class="header" href="#if-i-delete-an-unattended-machine-from-my-controller-account-will-it-automatically-revoke-permission-on-the-target">If I delete an unattended machine from my controller account, will it automatically revoke permission on the target?</a></h3>
+<p>Yes. Once an unattended target is removed, the change will be effective immediately. If the target machine is powered down or otherwise not connected to the internet, the change will be effective as soon as an internet connection is established on their machine.</p>
+<h3 id="the-target-machine-rebooted-after-installing-updates-and-drivers-and-it-requires-a-password-to-log-in-how-does-the-session-continue-from-here"><a class="header" href="#the-target-machine-rebooted-after-installing-updates-and-drivers-and-it-requires-a-password-to-log-in-how-does-the-session-continue-from-here">The target machine rebooted after installing updates and drivers, and it requires a password to log in. How does the session continue from here?</a></h3>
+<p>In most instances, particularly when FileVault disk encryption is enabled, the target user will need to manually enter the password. RIM cannot start on an encrypted Mac before it has been fully logged in.</p>
+<h3 id="i-have-multiple-machines-playing-the-part-of-the-controller-will-the-list-of-machines-set-up-for-unattended-access-populate-across-all-machines"><a class="header" href="#i-have-multiple-machines-playing-the-part-of-the-controller-will-the-list-of-machines-set-up-for-unattended-access-populate-across-all-machines">I have multiple machines playing the part of the controller. Will the list of machines set up for unattended access populate across all machines?</a></h3>
+<p>Yes. The list of machines configured for unattended access is stored within your account, so it will populate automatically.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="dashboard.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="pricing.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="dashboard.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="pricing.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" charset="utf-8"></script>
+        <script src="mark.min.js" charset="utf-8"></script>
+        <script src="searcher.js" charset="utf-8"></script>
+        <script src="clipboard.min.js" charset="utf-8"></script>
+        <script src="highlight.js" charset="utf-8"></script>
+        <script src="book.js" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
